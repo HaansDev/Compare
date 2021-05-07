@@ -2,6 +2,7 @@
 
 /* BASIC */
 
+
 .fondo{
   background: linear-gradient(175.93deg, #5867E4 -10.23%, #B200F1 117.03%);
 }
@@ -9,7 +10,7 @@
 
 body {
   font-family: Roboto, sans-serif;
-  height: 100vh;
+
   font-style: bold;
 }
 
@@ -285,7 +286,7 @@ input[type=text]:placeholder {
 
 #icon {
   width:40%;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 
 a{
@@ -303,6 +304,7 @@ button{
   background-color: black;
   width: 40%;
   color: white;
+
 }
 
 button:hover{

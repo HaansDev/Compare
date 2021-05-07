@@ -1,3 +1,4 @@
+
 <div class="fondo">
 <div class="wrapper fadeInDown">
   <div id="formContent">
@@ -6,7 +7,9 @@
     <!-- Icon -->
     <div class="fadeIn first py-3 logo">
       <img src="../../../assets/images/Logo-cabeceraTransparente.svg" id="laptop" alt="User Icon" routerLink="/"/>
+
     </div>
+    <div class="dashboard-text"><h3><span>DASHBOARD</span></h3></div>
 
     <!-- Login Form -->
     <form
@@ -16,17 +19,17 @@
       novalidate
     >
       <div>
-        <div class="label"><h6>Correo electrónico</h6></div>
+        <div class="label"><h6>Identificador de administrador</h6></div>
         <input
           type="email"
           class="fadeIn second form-control"
           id="validationCustom01"
-          placeholder="Introduce tu correo electrónico"
+          placeholder="Introduce tu identificador de administrador"
           formControlName="email"
           [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
 
         />
-        <div class="invalid-feedback ">Introduce un email válido</div>
+        <div class="invalid-feedback ">Introduce un identificador válido</div>
       </div>
       <div>
         <div class="label mt-2"><h6>Contraseña</h6></div>
@@ -41,12 +44,9 @@
         />
         <div class="invalid-feedback ">Introduce una contraseña válida</div>
       </div>
-      <button class="fadeIn fourth mt-4">Log in</button>
-      <br />
-      <p class="fadeIn fourth pt-4">
-        ¿No tienes cuenta?
-        <a class="fadeIn fourth account" routerLink="/register">Regístrate</a>
-      </p>
+      <button class="fadeIn fourth my-4">Log in</button>
+      <br/>
+
     </form>
   </div>
 </div>

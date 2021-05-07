@@ -1,0 +1,79 @@
+<div class="fondo">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+
+    <!-- Icon -->
+    <div class="fadeIn first pb-1 logo">
+      <img src="../../../assets/images/Logo-cabeceraTransparente.svg"  id="laptop" alt="User Icon" routerLink="/"/>
+    </div>
+
+    <!-- Login Form -->
+    <form
+      [formGroup]="sForm"
+      (ngSubmit)="saveData()"
+      class="needs-validation"
+      novalidate
+    >
+      <div>
+        <div class="label"><h6>Correo electrónico</h6></div>
+        <input
+          type="email"
+          class="fadeIn second form-control"
+          id="validationCustom01"
+          placeholder="Introduce tu correo electrónico"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
+
+        />
+        <div class="invalid-feedback ">Introduce un email válido</div>
+      </div>
+      <div>
+        <div class="label mt-2"><h6>Nombre de usuario</h6></div>
+        <input
+          type="password"
+          class="fadeIn third form-control"
+          id="validationCustom02"
+          placeholder="Introduce tu nombre de usuario"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
+
+        />
+        <div class="invalid-feedback ">Introduce un nombre de usuario válido</div>
+      </div>
+      <div>
+        <div class="label mt-2"><h6>Contraseña</h6></div>
+        <input
+          type="email"
+          class="fadeIn second form-control"
+          id="validationCustom01"
+          placeholder="Introduce tu correo electrónico"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
+
+        />
+        <div class="invalid-feedback ">Introduce una contraseña válida</div>
+      </div>
+      <div>
+        <div class="label mt-2"><h6>Confirmar contraseña</h6></div>
+        <input
+          type="password"
+          class="fadeIn third form-control"
+          id="validationCustom02"
+          placeholder="Introduce de nuevo tu contraseña"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
+
+        />
+        <div class="invalid-feedback ">La contraseña no coincide</div>
+      </div>
+      <button class="fadeIn fourth mt-2">Log in</button>
+      <br />
+      <p class="fadeIn fourth pt-2">
+        ¿Ya tienes cuenta?
+        <a class="fadeIn fourth account" routerLink="/login">Inicia sesión</a>
+      </p>
+    </form>
+  </div>
+</div>
+</div>
