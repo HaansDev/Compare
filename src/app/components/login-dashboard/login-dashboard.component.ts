@@ -1,13 +1,14 @@
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-dashboard',
+  templateUrl: './login-dashboard.component.html',
+  styleUrls: ['./login-dashboard.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginDashboardComponent implements OnInit {
+
 
   mForm: FormGroup;
   isSend = false;
@@ -73,8 +74,6 @@ export class LoginComponent implements OnInit {
   // //     }
   // //   );
   }
-
-
 
 
 }
