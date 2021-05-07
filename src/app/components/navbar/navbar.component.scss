@@ -1,0 +1,33 @@
+@import '../../../styles';
+.navbar {
+    /*  */
+    position: fixed !important;
+    width: 100%;
+    z-index: 1;
+    /* */
+    background: transparent;
+    img { width: 190px; }
+    .navbar-collapse {
+        .navbar-nav {
+            margin: auto;
+            margin-top: 0;
+            .nav-item {
+                .nav-link {
+                    color: $cWhite;
+                }
+            }
+        }
+        .btn-signup {
+            width: 190px;
+            button {
+                height: 61px;
+                width: 152px;
+                left: 1720px;
+                top: 14px;
+                float: right;
+                background: $cWhite;
+                border-radius: 60px;
+            }
+        }
+    }
+}
