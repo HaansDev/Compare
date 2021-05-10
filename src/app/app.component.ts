@@ -16,18 +16,24 @@ export class AppComponent {
 
   }
 
-  isLogin!: boolean;
+  isLogin: boolean = false
   ngOnInit(
   ){
     // const name = localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDZkYzJhMTJmYWU4ZTNjNjBkNjlhNGMiLCJpYXQiOjE2MTg4Mjg4MTAsImV4cCI6MTYxOTQzMzYxMH0.bJT5InthOzTkE_tLsTb3JcEQoeh9Vb-484xc2K0hhGA")
 
     this.router.events.subscribe (route=>{
       if(route instanceof NavigationEnd){
-        if(route.url == "/login" || route.url == "/register" || route.url == "/dashboardlogin" || route.url == "/dashboard"){
-          this.isLogin = true
-        } else {
-          this.isLogin = false
+
+        // Rutas sin navbar ni footer
+        let rutas = ["/login", "/register", "/dashboardlogin", "/dashboard", "/dashboard/control", "/dashboard/edition", "/dashboard/admin", "/dashboard/contact"]
+
+        for (let i = 0; i < rutas.length; i++) {
+          if(route.url == rutas[i]){
+            this.isLogin = true
+          }
+
         }
+
       }
     })
   }
