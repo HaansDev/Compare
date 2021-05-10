@@ -1,0 +1,28 @@
+.my100 {
+  height: 100vh !important;
+}
+
+.menu-bar{
+  width: 20rem;
+  background: linear-gradient(175.93deg, #5867E4 -10.23%, #B200F1 117.03%);
+
+}
+
+.dashboard-text{
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+  h3{
+  margin-top: -2.25rem;
+  margin-bottom: 1.5rem;
+  padding-left: 0.2rem;
+  span{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}}
+
+.actived {
+  font-weight: 500;
+  color: #FBE841 !important;
+}

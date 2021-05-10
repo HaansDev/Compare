@@ -1,3 +1,29 @@
-<p>
-  dashboard works!
-</p>
+<div class="d-flex my100">
+  <div class="d-flex flex-column p-3 text-white menu-bar">
+    <img src="../../../assets/images/Logo-cabeceraTransparente.svg" id="laptop" alt="User Icon" routerLink=""/>
+    <div class="dashboard-text"><h3><span>DASHBOARD</span></h3></div>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+              <a href="#" class="nav-link text-white my-2" [routerLink]="['control']" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Panel de control</a>
+          </li>
+          <li>
+              <a href="#" class="nav-link text-white my-2" [routerLink]="['edition']" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Panel de edición</a>
+          </li>
+          <li>
+              <a href="#" class="nav-link text-white my-2" [routerLink]="['contact']" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Panel de contacto</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white my-2" [routerLink]="['admin']" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Perfil de administrador</a>
+        </li>
+      </ul>
+      <ul class="nav nav-pills flex-column mt-auto">
+        <li class="nav-item">
+            <a href="#" class="nav-link text-white" routerLink="/dashboardlogin" routerLinkActive="actived" [routerLinkActiveOptions]="{exact: true}">Cerrar sesión</a>
+        </li>
+      </ul>
+  </div>
+  <div class="p-2 w-100 bd-highlight overflow-auto">
+      <router-outlet></router-outlet>
+  </div>
+</div>
