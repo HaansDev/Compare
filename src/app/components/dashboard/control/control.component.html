@@ -1,3 +1,43 @@
-<p>
-  control works!
-</p>
+<div class="control-panel mt-3 ms-5">
+
+<div class="title">
+  <h2>Panel de control</h2>
+</div>
+<div class="d-flex">
+  <button class="ms-auto btn btn-dark">Añadir portátil</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Portátil</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Valoración</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">
+        <div class="image"></div>
+      </td>
+      <td>Mark</td>
+      <td>
+        <ng-template #t let-fill="fill">
+        <span class="star" [class.full]="fill === 100">
+          <span class="half" [style.width.%]="fill">
+            &#9733;
+      </span>
+      &#9733;
+
+        </span>
+      </ng-template>
+
+      <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+    </td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

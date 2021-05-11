@@ -1,3 +1,4 @@
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ContactComponent } from './components/dashboard/contact/contact.component';
 import { AdminComponent } from './components/dashboard/admin/admin.component';
@@ -15,6 +16,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -29,13 +32,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ControlComponent,
     EditionComponent,
     AdminComponent,
-    ContactComponent
+    ContactComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,12 @@
 
 }
 
+.icon{
+  filter: invert(100%) sepia(94%) saturate(3%) hue-rotate(221deg) brightness(103%) contrast(100%);
+  width: 25px;
+  height: 25px;
+}
+
 .dashboard-text{
   margin-left: 5rem;
   margin-top: 0.5rem;

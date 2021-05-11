@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
 
+
+
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  currentRate = 4.5;
 }
