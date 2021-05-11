@@ -5,9 +5,12 @@ $cWhite: #FFFFFF;
 $cBlackTheme: #161616;
 
 .fondo {
-height: 100vh;
+height: 100% !important;
 
 ;}
 
 
 
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
