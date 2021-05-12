@@ -1,0 +1,66 @@
+.contact-panel{
+  margin-right: 3rem;
+
+  .icon{
+    filter: invert(39%) sepia(16%) saturate(15%) hue-rotate(321deg) brightness(88%) contrast(83%);
+    width: 25px;
+    height: 25px;
+  }
+.btn{
+
+  height: 3rem;
+  .icon-button{
+    filter: invert(100%) sepia(12%) saturate(7452%) hue-rotate(207deg) brightness(113%) contrast(111%);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+  .image{
+    background: url("../../../../assets/images/perfil.jpg");
+    margin-top: 0.25rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .image-small{
+    background: url("../../../../assets/images/perfil.jpg");
+    margin-top: 0.25rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 4rem;
+  }
+
+
+
+  .admin-data{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .admin-row{
+    height: 6rem;
+    background: #EEF2F5;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+
+
+  }
+
+  .new-message{
+    background-color: #B6C4F4;
+    height: 2rem;
+  }
+
+}

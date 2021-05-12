@@ -1,3 +1,49 @@
-<p>
-  contact works!
-</p>
+<div class="contact-panel mt-3 ms-5">
+
+  <div class="title d-flex mb-4">
+    <h2 class="me-auto">Panel de contacto</h2>
+    <a class="nav-link text-dark" routerLink="/dashboard/admin"><img class="icon me-3" src="../../../assets/icons/admin.svg">Cristian Fernández</a>
+  </div>
+
+  <div class="admin-data">
+    <div class="image rounded-circle me-3"></div>
+    <div>
+      <p>0000001-LCA</p>
+      <p>Cristian Fernández</p></div>
+  </div>
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-start">
+        <h6>Administrador</h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-start">
+        <h6>ID</h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end">
+        <h6 class="me-5">Acciones</h6>
+      </div>
+    </div>
+  </div>
+<div *ngFor="let admin of admins" >
+  <div class="container admin-row border border-secondary">
+    <div class="row ">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-start align-items-center">
+        <div class="image-small rounded-circle me-3"></div>
+        <h6>{{admin.name}} {{admin.lastname}}</h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-start align-items-center">
+        <h6>{{admin.adminID}}</h6>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
+        <button (click)="openContact()" class="btn btn-primary "><img class="icon-button me-3" src="../../../assets/icons/mail.svg">Contactar</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isContact" class="container">
+    <div class="row">
+  <div  class="new-message col-12 col-sm-12 col-md-12 col-lg-12">Probando</div></div></div>
+  </div>
+
+</div>
