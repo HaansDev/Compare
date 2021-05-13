@@ -53,14 +53,27 @@
     flex-direction: column;
 
     justify-content: center;
-
+    border-radius: 0.5rem;
 
 
   }
 
   .new-message{
-    background-color: #B6C4F4;
-    height: 2rem;
+    background-color: rgb(167, 167, 167);
+    border-radius: 1rem;
+
+    label{
+      font-weight: 500;
+    }
+
+    .close{
+      height: 2rem;
+      span{
+        position: relative;
+        bottom: 0.25rem;
+      }
+    }
   }
+
 
 }

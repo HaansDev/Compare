@@ -32,3 +32,17 @@
   font-weight: 500;
   color: #FBE841 !important;
 }
+
+
+.admin-icon{
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+
+  .icon-a{
+    filter: invert(39%) sepia(16%) saturate(15%) hue-rotate(321deg) brightness(88%) contrast(83%);
+    width: 25px;
+    height: 25px;
+  }
+
+}

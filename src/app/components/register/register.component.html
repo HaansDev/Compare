@@ -5,7 +5,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first pb-1 logo">
-      <img src="../../../assets/images/Logo-cabeceraTransparente.svg"  id="laptop" alt="User Icon" routerLink="/"/>
+      <img src="../../../assets/images/LOGO-NEGRO.svg"  id="laptop" alt="User Icon" routerLink="/"/>
     </div>
 
     <!-- Login Form -->
@@ -31,11 +31,11 @@
       <div>
         <div class="label mt-2"><h6>Nombre de usuario</h6></div>
         <input
-          type="password"
+          type="text"
           class="fadeIn third form-control"
           id="validationCustom02"
           placeholder="Introduce tu nombre de usuario"
-          formControlName="password"
+          formControlName="text"
           [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
 
         />
@@ -44,11 +44,11 @@
       <div>
         <div class="label mt-2"><h6>Contraseña</h6></div>
         <input
-          type="email"
+          type="password"
           class="fadeIn second form-control"
           id="validationCustom01"
           placeholder="Introduce tu correo electrónico"
-          formControlName="email"
+          formControlName="password"
           [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
 
         /><br>
