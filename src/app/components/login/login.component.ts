@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       console.error('El formulario NO es válido');
       return;
     } else {
-      // this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
       console.log('El formulario es válido');
     }
 
