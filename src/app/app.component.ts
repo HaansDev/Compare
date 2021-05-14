@@ -28,7 +28,7 @@ export class AppComponent {
         let rutas = ["/login", "/register", "/dashboardlogin", "/dashboard", "/dashboard/control", "/dashboard/edition", "/dashboard/admin", "/dashboard/contact"]
 
         for (let i = 0; i < rutas.length; i++) {
-          if(route.url == rutas[i]){
+          if(route.url.includes(rutas[i])){
             this.isLogin = true
           }
 
