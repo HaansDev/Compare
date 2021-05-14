@@ -18,7 +18,8 @@ const routes: Routes = [
     {path: "dashboard", component: DashboardComponent, children:
 [ { path: "", redirectTo: "control", pathMatch: "full" },
 {path: "control", component: ControlComponent },
-{path: "edition", component: EditionComponent },
+{path: "edition/new", component: EditionComponent },
+{path: "edition/edit/:id", component: EditionComponent },
 { path: "admin", component: AdminComponent },
 { path: "contact", component: ContactComponent }]}
 ];

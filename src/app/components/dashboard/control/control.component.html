@@ -4,7 +4,7 @@
   <h2 class="me-auto">Panel de control</h2>
  </div>
 <div class="d-flex mb-4">
-  <button routerLink="/dashboard/edition" class="ms-auto btn btn-dark">Añadir portátil</button>
+  <button routerLink="/dashboard/edition/new" class="ms-auto btn btn-dark">Añadir portátil</button>
 </div>
 
 <table class="table table-striped">
@@ -36,7 +36,7 @@
 
       <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
     </td>
-      <td class="text-data actions"><a class="edit-icon" routerLink="/dashboard/edition"><img class="icon me-4" src="../../../../assets/icons/edit.svg"></a> <a class="delete-icon" routerLink="/dashboard/edition"><img class="icon me-3" src="../../../../assets/icons/eliminar.svg"></a></td>
+      <td class="text-data actions"><a class="edit-icon" (click)="editLaptop(laptop._id)"><img class="icon me-4" src="../../../../assets/icons/edit.svg"></a> <a class="delete-icon" routerLink="/dashboard/edition"><img class="icon me-3" src="../../../../assets/icons/eliminar.svg"></a></td>
     </tr>
   </tbody>
 </table>
