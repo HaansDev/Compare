@@ -27,6 +27,7 @@
 
 .edit-icon:hover{
   filter: invert(50%) sepia(76%) saturate(477%) hue-rotate(169deg) brightness(81%) contrast(81%);
+  cursor: pointer;
 
 }
 
@@ -64,4 +65,11 @@
 .page-link{
   color: black;
 
+}
+
+.actions{
+
+  img{
+    margin-left: 1rem;
+  }
 }
