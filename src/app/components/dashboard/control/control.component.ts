@@ -20,7 +20,7 @@ export class ControlComponent implements OnInit {
   }
 
   editLaptop(id: any) {
-    this.router.navigate(["dashboard/edition/change/" + id ])
+    this.router.navigate(["dashboard/edition/edit/" + id ])
   }
 
 

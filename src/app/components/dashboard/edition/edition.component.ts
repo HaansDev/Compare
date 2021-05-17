@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class EditionComponent implements OnInit {
 
   isEditMode = false
+  isNewMode = false
   id = ""
   data!: any;
 
@@ -17,35 +18,35 @@ export class EditionComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private activateRoute: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.subscribe(route => {
 
       if (route instanceof NavigationEnd) {
-        if (route.url.includes("change")) {
+        if (route.url.includes("/edition/new")) {
 
-          this.isEditMode = true
-          this.id = this.activateRoute.snapshot.paramMap.get("id") || ""
+          this.isEditMode = false
 
         } else {
-          this.isEditMode = false
+          this.isEditMode = true
+          this.id = this.route.snapshot.paramMap.get("id") || ""
+          console.log(this.isEditMode)
         }
       }
 
     })
+
   }
 
 
   ngOnInit() {
 
     console.log(this.isEditMode)
-    this.activateRoute.params.subscribe( params => {
-        console.log(params.id)
-        console.log(this.id)
-        console.log(typeof this.data)
+    this.route.params.subscribe( params => {
+
         for (let i = 0; i < this.laptops.length; i++) {
           if(params.id == this.laptops[i]._id){
             this.data = this.laptops[i]
-            console.log(this.data.weight)
+
           }
 
         }

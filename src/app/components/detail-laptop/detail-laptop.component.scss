@@ -1,0 +1,92 @@
+@import '../../../styles';
+.container-fluid {
+    height: 500px;
+    background: linear-gradient(249.78deg, #5867E4 -0.64%, #B200F1 103.6%);
+    .row {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        padding-top: 150px;
+        .image {
+            width: 30%;
+            float: left;
+        }
+        .laptop-entry {
+            width: 65%;
+            float: right;
+            .title-laptop {
+                font-family: 'DM Sans', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 48px;
+                line-height: 122%;
+                color: $cWhite;
+                text-align: left;
+            }
+            .box-price-amazon {
+                width: 170px;
+                float: left;
+                margin-top: 30px;
+                margin-left: 25px;
+                .price-amazon {
+                    width: 170px;
+                    height: 34px;
+                    background: $cWhite;
+                    padding: 5px;
+                    border: 1px solid #e7e8e7;
+                    .price {
+                        float: left;
+                        font-style: italic;
+                        font-size: 22px;
+                        font-weight: 700;
+                        line-height: 122%;
+                        color: #424242;
+                    }
+                    .logo-amazon {
+                        position: relative;
+                        float: right;
+                        width: 45%;
+                        padding: 2px;
+
+                    }
+                }
+            }
+            .valoration {
+                width: 18%;
+                float: right;
+                margin-top: 40px;
+            }
+        }
+    }
+}
+.container {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    .title-tecnico {
+        margin-bottom: 30px;
+    }
+    .row {
+        margin-bottom: 45px;
+        .col-4 {
+            flex: 0 0 auto;
+            width: 33.3333333333%;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: #000;
+        }
+        .col-6 {
+            flex: 0 0 auto;
+            width: 50%;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 100%;
+            color: #000;
+        }
+    }
+    .container-separator { margin-bottom: 45px; }
+}
