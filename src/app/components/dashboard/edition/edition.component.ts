@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditionComponent implements OnInit {
 
-  isEditMode = true
+  isEditMode = false
   id = ""
   data!: any;
 
@@ -21,12 +21,13 @@ export class EditionComponent implements OnInit {
     this.router.events.subscribe(route => {
 
       if (route instanceof NavigationEnd) {
-        if (route.url.includes("new")) {
-          this.isEditMode = false
+        if (route.url.includes("change")) {
 
-        } else {
           this.isEditMode = true
           this.id = this.activateRoute.snapshot.paramMap.get("id") || ""
+
+        } else {
+          this.isEditMode = false
         }
       }
 
@@ -35,6 +36,8 @@ export class EditionComponent implements OnInit {
 
 
   ngOnInit() {
+
+    console.log(this.isEditMode)
     this.activateRoute.params.subscribe( params => {
         console.log(params.id)
         console.log(this.id)
