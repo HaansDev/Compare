@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
     this.router.events.subscribe( route => {
 
       if(route instanceof NavigationEnd) {
-        if(route.url == "/amd" || route.url == "/intel" || route.url == "/apple") {
+        if(route.url == "/laptops") {
           this.transparent = false
           this.dark = true
         } else {

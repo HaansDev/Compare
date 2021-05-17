@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg" [ngClass]="{ 'transparent': transparent, 'sticky': sticky, 'dark': dark }">
     <div class="container-fluid">
-        <a href="#">
+        <a routerLink="/">
           <img src="../../assets/images/Logo-cabeceraScroll.svg" alt="Logo compare">
         </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -8,15 +8,8 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Página principal</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    CPU
-                </a>
-                <ul class="dropdown-menu" >
-                    <li><a class="dropdown-item" routerLink="/amd" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">AMD</a></li>
-                    <li><a class="dropdown-item" href="#">Intel</a></li>
-                    <li><a class="dropdown-item" href="#">Apple</a></li>
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/laptops" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Portátiles</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">Como elegir portatil</a>

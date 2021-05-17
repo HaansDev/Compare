@@ -11,13 +11,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.component';
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
-import { AmdComponent } from './components/amd/amd.component';
+import { LaptopsComponent } from './components/laptops/laptops.component';
 
 const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
-    { path: "amd", component: AmdComponent },
+    { path: "laptops", component: LaptopsComponent },
     // AÑADIR ID
-    { path: "detail", component: DetailLaptopComponent },
+    { path: "laptop/:id", component: DetailLaptopComponent },
     { path: "compare", component: CompareLaptopsComponent },
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
