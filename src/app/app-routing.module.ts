@@ -9,19 +9,27 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.component';
+import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
+import { AmdComponent } from './components/amd/amd.component';
 
 const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
-    {path: "login", component: LoginComponent },
-    {path: "register", component: RegisterComponent },
-    {path: "dashboardlogin", component: LoginDashboardComponent },
-    {path: "dashboard", component: DashboardComponent, children:
-[ { path: "", redirectTo: "control", pathMatch: "full" },
-{path: "control", component: ControlComponent },
-{path: "edition/new", component: EditionComponent },
-{path: "edition/edit/:id", component: EditionComponent },
-{ path: "admin", component: AdminComponent },
-{ path: "contact", component: ContactComponent }]}
+    { path: "amd", component: AmdComponent },
+    // AÑADIR ID
+    { path: "detail", component: DetailLaptopComponent },
+    { path: "compare", component: CompareLaptopsComponent },
+    { path: "login", component: LoginComponent },
+    { path: "register", component: RegisterComponent },
+    { path: "dashboardlogin", component: LoginDashboardComponent },
+    { path: "dashboard", component: DashboardComponent, children:[
+        { path: "", redirectTo: "control", pathMatch: "full" },
+        { path: "control", component: ControlComponent },
+        { path: "edition/new", component: EditionComponent },
+        { path: "edition/edit/:id", component: EditionComponent },
+        { path: "admin", component: AdminComponent },
+        { path: "contact", component: ContactComponent }
+    ]}
 ];
 
 @NgModule({
