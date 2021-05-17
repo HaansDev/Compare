@@ -17,6 +17,11 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.component';
+import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
+import { AmdComponent } from './components/amd/amd.component';
+import { IntelComponent } from './components/intel/intel.component';
+import { AppleComponent } from './components/apple/apple.component';
 
 
 @NgModule({
@@ -33,6 +38,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditionComponent,
     AdminComponent,
     ContactComponent,
+    DetailLaptopComponent,
+    CompareLaptopsComponent,
+    AmdComponent,
+    IntelComponent,
+    AppleComponent,
 
 
   ],

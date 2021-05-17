@@ -25,7 +25,7 @@ export class AppComponent {
       if(route instanceof NavigationEnd){
 
         // Rutas sin navbar ni footer
-        let rutas = ["/login", "/register", "/dashboardlogin", "/dashboard", "/dashboard/control", "/dashboard/edition", "/dashboard/admin", "/dashboard/contact"]
+        let rutas = ["/login", "/register", "/dashboardlogin", "/dashboard", "/dashboard/control", "/dashboard/edition", "/dashboard/admin", "/dashboard/contact", "/compare"]
 
         for (let i = 0; i < rutas.length; i++) {
           if(route.url.includes(rutas[i])){
