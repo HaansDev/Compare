@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditionComponent implements OnInit {
 
-  isEditMode = false
-  isNewMode = false
+  isEditMode = true
   id = ""
   data!: any;
 
@@ -22,7 +21,7 @@ export class EditionComponent implements OnInit {
     this.router.events.subscribe(route => {
 
       if (route instanceof NavigationEnd) {
-        if (route.url.includes("/edition/new")) {
+        if (route.url.includes("new")) {
 
           this.isEditMode = false
 

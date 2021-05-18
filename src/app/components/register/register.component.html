@@ -52,7 +52,7 @@
           [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
 
         /><br>
-        <small id="emailHelp" class="form-text text-muted">La contraseña debe contener mayúsculas, minúsculas y números</small>
+        <small id="emailHelp" class="form-text text-muted">La longitud de la contraseña debe estar entre 8 y 32.<br>La contraseña debe contener al menos:<br> un número, una mayúscula, una minúscula y uno de estos símbolos $@!%*?&.</small>
         <div class="invalid-feedback ">Introduce una contraseña válida</div>
       </div>
       <div>
