@@ -90,3 +90,33 @@
     }
     .container-separator { margin-bottom: 45px; }
 }
+
+.star {
+
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 1.75rem;
+
+  color: #d3d3d3;
+
+}
+
+.full {
+
+  color: rgb(255, 196, 0);
+
+}
+
+.half {
+
+  position: absolute;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  color: rgb(255, 196, 0);
+
+}
