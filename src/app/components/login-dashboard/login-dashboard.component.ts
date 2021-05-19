@@ -21,14 +21,14 @@ export class LoginDashboardComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$'),
+          Validators.pattern('^[0-9]{6}\-LCA$'),
         ],
       ],
       password: [
         '',
         [
           Validators.required,
-          Validators.pattern('^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$'),
+          Validators.pattern('^[a-zA-Z0-9]{6,30}$'),
         ],
       ],
     });
@@ -53,7 +53,7 @@ export class LoginDashboardComponent implements OnInit {
       console.error('El formulario NO es válido');
       return;
     } else {
-      // this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
       console.log('El formulario es válido');
     }
 

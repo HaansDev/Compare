@@ -2,6 +2,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
+import { ConfirmedValidator } from './confirmed.validator';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,10 +16,11 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.sForm = fb.group({
-      userName: ['', [Validators.required, Validators.minLength(4)]],
+      username: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,8}$")]],
-      password: ['', [Validators.required, Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$")]]
-    })
+      password: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]{8,30}$")]],
+      confirm_password: ['', [Validators.required]]
+    },{validator: ConfirmedValidator('password', 'confirm_password')})
    }
 
   ngOnInit() {
@@ -30,7 +33,7 @@ export class RegisterComponent implements OnInit {
   saveData() {
     this.isSend = true
     console.log("Guardar!!", this.sForm);
-    console.log(this.f.userName.errors)
+    console.log(this.f.username.errors)
     console.log(this.f.email.errors)
     console.log(this.f.password.errors)
 

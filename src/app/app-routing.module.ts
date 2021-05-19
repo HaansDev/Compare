@@ -27,7 +27,7 @@ const routes: Routes = [
         { path: "control", component: ControlComponent },
         { path: "edition/new", component: EditionComponent },
         { path: "edition", redirectTo: "edition/new", pathMatch: "full" },
-        { path: "edition/edit/:id", component: EditionComponent },
+        { path: "edition/change/:id", component: EditionComponent },
         { path: "admin", component: AdminComponent },
         { path: "contact", component: ContactComponent }
     ]}
