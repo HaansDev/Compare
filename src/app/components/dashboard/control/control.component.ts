@@ -48,7 +48,7 @@ export class ControlComponent implements OnInit {
     os: "Windows 10",
     weight: 2.5,
     valoration: 4.6,
-    _id: "606d5fc2b278be3fd63c7588"
+    _id: "60a54cffff2aec4fb0860fb2"
 
   },
   {
