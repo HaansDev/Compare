@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditionComponent implements OnInit {
 
-  isEditMode = true
+  isEditMode = false
   id = ""
   data!: any;
 
@@ -21,14 +21,13 @@ export class EditionComponent implements OnInit {
     this.router.events.subscribe(route => {
 
       if (route instanceof NavigationEnd) {
-        if (route.url.includes("new")) {
-
-          this.isEditMode = false
-
-        } else {
+        console.log("por aqui pasamos")
+        if (route.url.includes("change")) {
           this.isEditMode = true
           this.id = this.route.snapshot.paramMap.get("id") || ""
           console.log(this.isEditMode)
+
+
         }
       }
 
@@ -39,9 +38,12 @@ export class EditionComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.isEditMode)
-    this.route.params.subscribe( params => {
 
+
+
+
+    this.route.params.subscribe( params => {
+      if(params.id){
         for (let i = 0; i < this.laptops.length; i++) {
           if(params.id == this.laptops[i]._id){
             this.data = this.laptops[i]
@@ -49,6 +51,34 @@ export class EditionComponent implements OnInit {
           }
 
         }
+
+      } else {
+        this.data =  {
+          image: "",
+          brand: "",
+          model: "",
+          price: 0,
+          fabric_date: "",
+          cpu: "",
+          cpu_core: 0,
+          cpu_speed: 0,
+          ram_type: "",
+          ram_speed: 0,
+          ram_size: 0,
+          ram_expand: 0,
+          graphics: "",
+          resolution: "",
+          rom: "",
+          hdmi: "",
+          usb: "",
+          battery: 0,
+          os: "",
+          weight: 0,
+          valoration: 0,
+          _id: ""
+
+        }
+      }
 
       })
 

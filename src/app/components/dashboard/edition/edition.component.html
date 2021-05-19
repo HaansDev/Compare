@@ -39,7 +39,7 @@
             type="text"
             class="form-control"
             id="price"
-            [value]="data.price"
+            [(ngModel)]="data.price"
             #price
           />
         </div>
@@ -56,7 +56,7 @@
             type="text"
             class="form-control"
             id="exampleInputPassword1"
-            [value]="data.brand"
+            [(ngModel)]="data.brand"
             #brand
           />
         </div>
@@ -73,7 +73,7 @@
             type="text"
             class="form-control"
             id="model"
-            [value]="data.model"
+            [(ngModel)]="data.model"
             #model
           />
         </div>
@@ -90,7 +90,7 @@
             type="text"
             class="form-control"
             id="fabricationDate"
-            [value]="data.fabric_date"
+            [(ngModel)]="data.fabric_date"
             #fabric_date
           />
         </div>
@@ -107,7 +107,7 @@
             type="text"
             class="form-control"
             id="CPU"
-            [value]="data.cpu"
+            [(ngModel)]="data.cpu"
             #cpu
           />
         </div>
@@ -124,7 +124,7 @@
             type="text"
             class="form-control"
             id="cores"
-            [value]="data.cpu_core"
+            [(ngModel)]="data.cpu_core"
             #cpu_core
           />
         </div>
@@ -141,7 +141,7 @@
             type="text"
             class="form-control"
             id="cpuSpeed"
-            [value]="data.cpu_speed"
+            [(ngModel)]="data.cpu_speed"
             #cpu_speed
           />
         </div>
@@ -158,7 +158,7 @@
             type="text"
             class="form-control"
             id="memoryType"
-            [value]="data.ram_type"
+            [(ngModel)]="data.ram_type"
             #ram_type
           />
         </div>
@@ -175,7 +175,7 @@
             type="text"
             class="form-control"
             id="RAMSpeed"
-            [value]="data.ram_speed"
+            [(ngModel)]="data.ram_speed"
             #ram_speed
           />
         </div>
@@ -192,7 +192,7 @@
             type="text"
             class="form-control"
             id="RAMSize"
-            [value]="data.ram_size"
+            [(ngModel)]="data.ram_size"
             #ram_size
           />
         </div>
@@ -209,7 +209,7 @@
             type="text"
             class="form-control"
             id="expandableRAM"
-            [value]="data.ram_expand"
+            [(ngModel)]="data.ram_expand"
             #ram_expand
           />
         </div>
@@ -226,7 +226,7 @@
             type="text"
             class="form-control"
             id="graphics"
-            [value]="data.graphics"
+            [(ngModel)]="data.graphics"
             #graphics
           />
         </div>
@@ -243,7 +243,7 @@
             type="text"
             class="form-control"
             id="resolution"
-            [value]="data.resolution"
+            [(ngModel)]="data.resolution"
             #resolution
           />
         </div>
@@ -260,7 +260,7 @@
             type="text"
             class="form-control"
             id="ROM"
-            [value]="data.rom"
+            [(ngModel)]="data.rom"
             #rom
           />
         </div>
@@ -277,7 +277,7 @@
             type="text"
             class="form-control"
             id="HDMI"
-            [value]="data.hdmi"
+            [(ngModel)]="data.hdmi"
             #hdmi
           />
         </div>
@@ -294,7 +294,7 @@
             type="text"
             class="form-control"
             id="USB"
-            [value]="data.usb"
+            [(ngModel)]="data.usb"
             #usb
           />
         </div>
@@ -311,7 +311,7 @@
             type="text"
             class="form-control"
             id="battery"
-            [value]="data.battery"
+            [(ngModel)]="data.battery"
             #battery
           />
         </div>
@@ -328,7 +328,7 @@
             type="text"
             class="form-control"
             id="OS"
-            [value]="data.os"
+            [(ngModel)]="data.os"
             #os
           />
         </div>
@@ -345,7 +345,7 @@
             type="text"
             class="form-control"
             id="weight"
-            [value]="data.weight"
+            [(ngModel)]="data.weight"
             #weight
           />
         </div>
@@ -363,5 +363,6 @@
     <button *ngIf="!isEditMode" class="mt-3 btn btn-dark">
       Añadir portátil
     </button>
+
   </div>
 </div>

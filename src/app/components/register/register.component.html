@@ -35,8 +35,8 @@
           class="fadeIn third form-control"
           id="validationCustom02"
           placeholder="Introduce tu nombre de usuario"
-          formControlName="text"
-          [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
+          formControlName="username"
+          [ngClass]="{ 'is-invalid': isSend && f.username.errors }"
 
         />
         <div class="invalid-feedback ">Introduce un nombre de usuario válido</div>
@@ -44,31 +44,31 @@
       <div>
         <div class="label mt-2"><h6>Contraseña</h6></div>
         <input
-          type="password"
+          type="text"
           class="fadeIn second form-control"
           id="validationCustom01"
           placeholder="Introduce tu contraseña"
           formControlName="password"
-          [ngClass]="{ 'is-invalid': isSend && f.email.errors }"
+          [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
 
         /><br>
-        <small id="emailHelp" class="form-text text-muted">La longitud de la contraseña debe estar entre 8 y 32.<br>La contraseña debe contener al menos:<br> un número, una mayúscula, una minúscula y uno de estos símbolos $@!%*?&.</small>
+        <small id="emailHelp" class="form-text text-muted">La longitud de la contraseña debe estar entre 8 y 30.<br>La contraseña puede contener:<br> números, mayúsculas y minúsculas.</small>
         <div class="invalid-feedback ">Introduce una contraseña válida</div>
       </div>
       <div>
         <div class="label mt-2"><h6>Confirmar contraseña</h6></div>
         <input
-          type="password"
+          type="text"
           class="fadeIn third form-control"
           id="validationCustom02"
           placeholder="Introduce de nuevo tu contraseña"
-          formControlName="password"
-          [ngClass]="{ 'is-invalid': isSend && f.password.errors }"
+          formControlName="confirm_password"
+          [ngClass]="{ 'is-invalid': isSend && f.confirm_password.errors }"
 
         />
         <div class="invalid-feedback ">La contraseña no coincide</div>
       </div>
-      <button class="fadeIn fourth mt-2">Log in</button>
+      <button class="fadeIn fourth mt-2">Registrarse</button>
       <br />
       <p class="fadeIn fourth pt-2">
         ¿Ya tienes cuenta?
