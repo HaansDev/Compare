@@ -1,8 +1,9 @@
 export class Laptop {
-    image?: string;
+    image?: any;
     brand?: string;
     model?: string;
     price?: number;
+    url?: string;
     fabric_date?: Date;
     cpu?: string;
     cpu_core?: number;
@@ -18,7 +19,7 @@ export class Laptop {
     usb?: string;
     battery?: number;
     os?: string;
-    weight?: string;
-    valoration?: number;
-    _id?: string;
+    weight?: number;
+    valoration?: any;
+    _id?: any;
 }

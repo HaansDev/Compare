@@ -23,8 +23,9 @@ const routes: Routes = [
     { path: "register", component: RegisterComponent },
     { path: "dashboardlogin", component: LoginDashboardComponent },
     { path: "dashboard", component: DashboardComponent, children:[
-        { path: "", redirectTo: "control", pathMatch: "full" },
-        { path: "control", component: ControlComponent },
+        { path: "", redirectTo: "control/1", pathMatch: "full" },
+        { path: "control", redirectTo: "control/1", pathMatch: "full" },
+        { path: "control/:page", component: ControlComponent },
         { path: "edition/new", component: EditionComponent },
         { path: "edition", redirectTo: "edition/new", pathMatch: "full" },
         { path: "edition/change/:id", component: EditionComponent },

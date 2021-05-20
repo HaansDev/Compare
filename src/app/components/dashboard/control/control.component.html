@@ -17,10 +17,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let laptop of laptops">
+    <tr *ngFor="let laptop of someLaptops">
       <td class="d-flex" scope="row">
-        <div class="image"  [ngStyle]="{ 'background-image': 'url(' + laptop.image + ')' }"></div>
-        <p class="pt-3 ms-3">{{laptop.model}}</p>
+        <div class="image" [ngStyle]="{ 'background-image': 'url('+ laptop.image +')'}"></div>
+        <p class="pt-3 ms-3">{{laptop.brand}} {{laptop.model}}</p>
       </td>
       <td class="text-data">{{laptop.price}} €</td>
       <td class="pt-2">
@@ -35,7 +35,7 @@
 
       <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
     </td>
-      <td class="text-data actions"><a class="edit-icon" (click)="editLaptop(laptop._id)"><img class="icon me-4" src="../../../../assets/icons/edit.svg"></a> <a class="delete-icon" routerLink="/dashboard/edition"><img class="icon me-3" src="../../../../assets/icons/eliminar.svg"></a></td>
+      <td class="text-data actions"><a class="edit-icon" (click)="editLaptop(laptop._id)"><img class="icon me-4" src="../../../../assets/icons/edit.svg"></a> <a class="delete-icon" (click)="deleteLaptop(laptop._id)"><img class="icon me-3" src="../../../../assets/icons/eliminar.svg"></a></td>
     </tr>
   </tbody>
 </table>
@@ -47,9 +47,9 @@
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li *ngFor="let page of pages; let p = index" class="page-item"><a class="page-link" (click)="goPage(page)">{{page}}</a></li>
+    <!-- <li class="page-item active"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>

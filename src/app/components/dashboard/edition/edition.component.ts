@@ -42,7 +42,7 @@ export class EditionComponent implements OnInit {
           }
         );
       } else {
-        console.log("Estamos creando un personaje")
+        console.log("Estamos creando un laptop")
       }
       //   for (let i = 0; i < this.laptops.length; i++) {
       //     if (params.id == this.laptops[i]._id) {
@@ -75,60 +75,18 @@ export class EditionComponent implements OnInit {
       //     _id: '',
       //   };
       //}
-    }
+
   //   );
   // }
+  }
 
 
-  saveLaptop(
-    // brand: string,
-    // model: string,
-    // price: number,
-    // fabric_date: Date,
-    // cpu: string,
-    // cpu_core: number,
-    // cpu_speed: number,
-    // ram_type: string,
-    // ram_speed: number,
-    // ram_size: number,
-    // ram_expand: number,
-    // graphics: string,
-    // resolution: string,
-    // rom: string,
-    // hdmi: boolean,
-    // usb: string,
-    // battery: number,
-    // os: string,
-    // weight: string,
-    // valoration: number
-  ) {
-
-    // laptop.image = '../../../../assets/images/laptop1.jpg';
-    // laptop.brand = brand;
-    // laptop.model = model;
-    // laptop.price = price;
-    // laptop.fabric_date = fabric_date;
-    // laptop.cpu = cpu;
-    // laptop.cpu_core = cpu_core;
-    // laptop.cpu_speed = cpu_speed;
-    // laptop.ram_type = ram_type;
-    // laptop.ram_speed = ram_speed;
-    // laptop.ram_size = ram_size;
-    // laptop.ram_expand = ram_expand;
-    // laptop.graphics = graphics;
-    // laptop.resolution = resolution;
-    // laptop.rom = rom;
-    // laptop.hdmi = hdmi;
-    // laptop.usb = usb;
-    // laptop.battery = battery;
-    // laptop.os = os;
-    // laptop.weight = weight;
-    // laptop.valoration = valoration;
+  saveLaptop() {
 
     this.laptopsService.saveLaptop(this.laptop).subscribe(
       (data) => {
         console.log(data);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/control']);
         // this.location.back()
       },
       (error) => {
@@ -141,8 +99,7 @@ export class EditionComponent implements OnInit {
   updateLaptop(){
 
     this.laptopsService.updateLaptop(this.laptop).subscribe((data) => {
-      console.log(data)
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/control']);
     },
       error => {
         console.log("Error:", error);

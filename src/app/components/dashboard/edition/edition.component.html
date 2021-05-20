@@ -6,33 +6,55 @@
     <div class="row">
       <div
         class="
-          col-3 col-sm-3 col-md-3 col-lg-3
+        col-3 col-sm-3 col-md-3 col-lg-3
           mt-2
           d-flex
           align-items-center
-          justify-content-end
+          justify-content-center
         "
       >
         <div
           class="border image"
-          [ngStyle]="{ 'background-image': 'url(../../../../assets/images/laptop1.jpg)' }"
+          [ngStyle]="{ 'background-image': 'url('+ laptop.image +')' }"
         ></div>
       </div>
       <div
         class="
-          col-3 col-sm-3 col-md-3 col-lg-3
-          mt-2
-          d-flex
-          align-items-center
-          justify-content-start
+        col-3 col-sm-3 col-md-3 col-lg-3
+          mt-5
         "
       >
-        <a class="nav-link text-dark" routerLink="/dashboard/edition"
+      <div class="form-group">
+        <label for="image">Imagen</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imagen"
+          [(ngModel)]="laptop.image"
+
+        />
+      </div>
+        <!-- <a class="nav-link text-dark" routerLink="/dashboard/edition"
           ><img class="icon me-3" src="../../../assets/icons/camara.svg" />Subir
           imagen</a
-        >
+        > -->
       </div>
-      <div class="col-5 col-sm-5 col-md-5 col-lg-5 mt-5">
+
+      <div class="col-3 col-sm-3 col-md-3 col-lg-3 mt-5">
+
+        <div class="form-group">
+          <label for="url">URL de compra</label>
+          <input
+            type="text"
+            class="form-control"
+            id="url"
+            [(ngModel)]="laptop.url"
+
+          />
+        </div>
+      </div>
+      <div class="col-2 col-sm-2 col-md-2 col-lg-2  mt-5">
+
         <div class="form-group">
           <label for="price">Precio</label>
           <input
