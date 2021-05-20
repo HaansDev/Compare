@@ -29,6 +29,28 @@ export class LaptopsService {
     );
   }
 
+  getSomeLaptops(page: number): Observable<any> {
+      return this.httpClient
+        .get(`${environment.apiUrl}/somelaptops/${page}`)
+        .pipe(
+          catchError((error) => {
+            return error;
+          })
+        );
+    }
+
+    getAllLaptops(): Observable<any> {
+
+      return this.httpClient
+        .get(`${environment.apiUrl}/alllaptops`)
+        .pipe(
+          catchError((error) => {
+            return error;
+          })
+        );
+    }
+
+
   updateLaptop(laptop: Laptop): Observable<any> {
     return this.httpClient
       .put(`${environment.apiUrl}/laptop/${laptop._id}`, laptop)
@@ -39,6 +61,13 @@ export class LaptopsService {
       );
   }
 
+  deleteLaptop(id: string): Observable<any> {
+    return this.httpClient.delete(`${environment.apiUrl}/laptop/${id}`).pipe(
+      catchError((error) => {
+        return error;
+      })
+    );
+  }
 
 
 
