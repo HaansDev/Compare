@@ -16,6 +16,7 @@
         <div
           class="border image"
           [ngStyle]="{ 'background-image': 'url('+ laptop.image +')' }"
+          *ngIf="laptop.image"
         ></div>
       </div>
       <div

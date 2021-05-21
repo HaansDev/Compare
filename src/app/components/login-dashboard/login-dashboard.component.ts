@@ -1,3 +1,5 @@
+import { Admin } from './../../models/admin.model';
+import { AdminService } from './../../services/admin.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -15,9 +17,9 @@ export class LoginDashboardComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private adminService: AdminService,) {
     this.mForm = this.fb.group({
-      email: [
+      adminID: [
         '',
         [
           Validators.required,
@@ -60,19 +62,19 @@ export class LoginDashboardComponent implements OnInit {
 
     //Hacer llamada al servicio
     //Dos servicios user y people
-  // //   const user: User = new User();
-  // //   user.email = this.f.email.value;
-  // //   user.password =  this.f.password.value;
-  // //   this.userService.login(user).subscribe(
-  // //     (data: any) => {
-  // //       localStorage.setItem("token", data.access_token)
-  // //       this.router.navigate(['/dashboard']);
-  // //       console.log(data);
-  // //     },
-  // //     (error) => {
-  // //       console.log('Error:', error);
-  // //     }
-  // //   );
+    const user: Admin = new Admin();
+    user.adminID = this.f.adminID.value;
+    user.password =  this.f.password.value;
+    this.adminService.login(user).subscribe(
+      (data: any) => {
+        localStorage.setItem("token", data.access_token)
+        this.router.navigate(['/dashboard']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('Error:', error);
+      }
+    );
   }
 
 

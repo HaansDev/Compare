@@ -43,15 +43,13 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center mt-5">
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
+      <a class="page-link" (click)="goPrePage()" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li *ngFor="let page of pages; let p = index" class="page-item"><a class="page-link" (click)="goPage(page)">{{page}}</a></li>
-    <!-- <li class="page-item active"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+    <li *ngFor="let item of pages; let p = index" class="page-item" [ngClass]="{'active': item == page}"><a class="page-link" (click)="goPage(item)">{{item}}</a></li>
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
+      <a class="page-link" (click)="goPostPage()" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
