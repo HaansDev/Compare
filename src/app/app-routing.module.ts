@@ -13,6 +13,8 @@ import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
 import { LaptopsComponent } from './components/laptops/laptops.component';
 
+import { AuthGuardService } from './services/auth/auth-guard.service';
+
 const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
     { path: "laptops", component: LaptopsComponent },
@@ -31,7 +33,7 @@ const routes: Routes = [
         { path: "edition/change/:id", component: EditionComponent },
         { path: "admin", component: AdminComponent },
         { path: "contact", component: ContactComponent }
-    ]}
+    ], canActivate: [AuthGuardService], }
 ];
 
 @NgModule({

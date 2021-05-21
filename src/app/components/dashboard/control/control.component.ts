@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
   page!: number;
+  prePage!: number;
+  postPage!: number;
 
   constructor(private activateRoute: ActivatedRoute, private router: Router, private laptopsService: LaptopsService) { }
 
@@ -20,6 +22,7 @@ export class ControlComponent implements OnInit {
       })
       this.getEightLaptops()
       this.getPages()
+      console.log(this.page)
   }
 
   someLaptops: Array<Laptop> = [];
@@ -28,7 +31,7 @@ export class ControlComponent implements OnInit {
     this.laptopsService.getSomeLaptops(this.page).subscribe(
       (data: Laptop[]) => {
         this.someLaptops = data;
-        console.log(data);
+        // console.log(data);
       },
       (error) => {
         console.log('Error:', error);
@@ -36,11 +39,53 @@ export class ControlComponent implements OnInit {
     );
   }
 
-  goPage(page: any) {
+  goPage(page: number) {
+
     this.router.navigate(['/dashboard/control/' + page]);
-    this.getPages()
-    this.getEightLaptops();
+    this.activateRoute.params.subscribe( params => {
+      page = params.page
+      console.log(typeof page)
+      console.log(page)
+      this.getPages()
+      this.getEightLaptops();
+    })
+
+    console.log(page)
+
   }
+
+  goPostPage() {
+
+    if(this.page < this.totalPages){
+    this.postPage = (parseInt(this.page + "") + 1)
+
+    console.log(this.postPage)
+    console.log(this.page)
+    this.goPage(this.postPage)
+  } else {
+    this.goPage(this.totalPages)
+  }
+
+  }
+
+
+  goPrePage() {
+
+    if(this.page > 1){
+  this.prePage = this.page - 1
+
+  console.log(this.prePage)
+  console.log(this.page)
+  this.goPage(this.prePage)
+}
+  else{
+    this.goPage(1)
+  }
+
+
+  }
+
+
 
 
 
@@ -50,7 +95,7 @@ export class ControlComponent implements OnInit {
 
   deleteLaptop(id: string) {
     this.laptopsService.deleteLaptop(id).subscribe(data => {
-      console.log(data)
+      // console.log(data)
 
       this.getEightLaptops();
       this.getPages()
@@ -70,11 +115,11 @@ export class ControlComponent implements OnInit {
     this.laptopsService.getAllLaptops().subscribe(
       (data: Laptop[]) => {
         this.allLaptops = data;
-        console.log(data);
+        // console.log(data);
         this.totalPages = Math.ceil(this.allLaptops.length/8)
-        console.log(this.totalPages)
+        // console.log(this.totalPages)
         this.pages = Array.from({length: this.totalPages}, (_, i) => i + 1)
-        console.log(this.pages)
+        // console.log(this.pages)
       },
       (error) => {
         console.log('Error:', error);

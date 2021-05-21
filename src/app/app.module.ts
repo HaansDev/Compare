@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +23,9 @@ import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
 import { LaptopsComponent } from './components/laptops/laptops.component';
 
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,12 @@ import { LaptopsComponent } from './components/laptops/laptops.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+    },{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
