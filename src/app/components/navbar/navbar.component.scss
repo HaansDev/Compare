@@ -38,6 +38,7 @@
 }
 .sticky {
     background: $cBlackTheme;
+    z-inde: 999;
 }
 
 @media all and (min-width: 992px) {

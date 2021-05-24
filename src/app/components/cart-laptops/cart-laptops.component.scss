@@ -1,0 +1,16 @@
+@import '../../../styles';
+.cart-laptops {
+    position: fixed;
+    height: 70px;
+    left: 15px;
+    bottom: 15px;
+    background: linear-gradient(257.87deg, #B200F1 8.95%, #6C50E7 56.11%, #5867E4 86.97%);
+    border-radius:  25px 0 25px 25px;
+    .btn {
+        color: $cWhite;
+        text-transform: uppercase;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

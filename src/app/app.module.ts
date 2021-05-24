@@ -26,6 +26,9 @@ import { LaptopsComponent } from './components/laptops/laptops.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/interceptors/auth-interceptor.service';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { NpnSliderModule } from "npn-slider";
+import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
+import { CartLaptopsComponent } from './components/cart-laptops/cart-laptops.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +47,8 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     DetailLaptopComponent,
     CompareLaptopsComponent,
     LaptopsComponent,
-
-
-
+    ScrollTopComponent,
+    CartLaptopsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,8 +56,8 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    HttpClientModule
-
+    HttpClientModule,
+    NpnSliderModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

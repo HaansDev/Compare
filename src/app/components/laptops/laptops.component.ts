@@ -5,14 +5,18 @@ import { Laptop } from '../../models/laptop.model';
 @Component({
   selector: 'app-amd',
   templateUrl: './laptops.component.html',
-  styleUrls: ['./laptops.component.scss']
+  styleUrls: ['./laptops.component.scss'],
 })
 export class LaptopsComponent implements OnInit {
+    currentValues = [0, 0];
 
 
     constructor(private activeRoute: ActivatedRoute, private router: Router) { }
 
     ngOnInit(): void {
+    }
+    onSliderChange(selectedValues: number[]) {
+        this.currentValues = selectedValues;
     }
     detailLaptop(id: any) {
       this.router.navigate(["laptop/" + id ])

@@ -10,6 +10,37 @@ $cBlackButton: #5E5E5E;
 .fondo {
     height: 100% !important;
 }
+.slider .bar {
+    z-index: 0 !important;
+    div.filler {
+        border: 0 !important;
+    }    
+}
+.slider .bar > span {
+    &.left-handle, &.right-handle {
+        background: #393939 !important;
+        border: 0px !important;
+    }
+}
+.slider .bar div.filler > span {
+    background: linear-gradient(249.78deg, #B200F1 -0.64%, #6C50E7 59.08%, #5867E4 98.17%)  !important;
+}
+.slider .bar > span {
+    &.left-handle .handle-tooltip,  &.right-handle .handle-tooltip {
+        left: -6px !important;
+    }
+    &.left-handle .handle-tooltip, &.right-handle .handle-tooltip {
+        border: 1px solid #6C50E7 !important;
+        background: #E3C1F0 !important;
+        color: #363636 !important;
+    }
+    &.left-handle .handle-tooltip:before, &.right-handle .handle-tooltip:before {
+        border-top-color: #6C50E7 !important;
+    }
 
+    &.left-handle .handle-tooltip:after, &.right-handle .handle-tooltip:after {
+        border-top-color: #6C50E7 !important;
+    }
+}
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

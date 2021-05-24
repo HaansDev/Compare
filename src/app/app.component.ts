@@ -9,16 +9,13 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'compare';
 
-
-
   constructor(private router: Router){
 
 
   }
 
   isLogin: boolean = false
-  ngOnInit(
-  ){
+  ngOnInit() {
     // const name = localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDZkYzJhMTJmYWU4ZTNjNjBkNjlhNGMiLCJpYXQiOjE2MTg4Mjg4MTAsImV4cCI6MTYxOTQzMzYxMH0.bJT5InthOzTkE_tLsTb3JcEQoeh9Vb-484xc2K0hhGA")
 
     this.router.events.subscribe (route=>{
@@ -37,4 +34,5 @@ export class AppComponent {
       }
     })
   }
+
 }
