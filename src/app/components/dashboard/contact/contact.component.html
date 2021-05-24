@@ -7,14 +7,14 @@
   <div class="admin-data">
     <div class="image rounded-circle me-3"></div>
     <div>
-      <p>0000001-LCA</p>
-      <p>Cristian Fernández</p>
+      <p>{{currentAdmin.adminID}}</p>
+      <p>{{currentAdmin.name}} {{currentAdmin.lastname}}</p>
     </div>
   </div>
 
   <div class="container">
     <div class="row ">
-      <div class="admins-box col-6 col-sm-6 col-md-6 col-lg-6 mt-5">
+      <div *ngIf="!isContact" class="admins-box col-12 col-sm-12 col-md-12 col-lg-12 mt-5">
 
           <div class="row">
             <div
@@ -76,7 +76,7 @@
                   align-items-center
                 "
               >
-                <button (click)="openContact()" class="btn btn-primary">
+                <button *ngIf="currentAdmin.adminID != admin.adminID" (click)="openContact(admin)" class="btn btn-primary">
                   <img
                     class="icon-button me-3"
                     src="../../../assets/icons/mail.svg"
@@ -87,25 +87,25 @@
           </div>
         </div>
       </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-        <div *ngIf="isContact" class="container">
+      <div *ngIf="isContact" class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="container">
           <div class="row">
             <div class="new-message col-12 col-sm-12 col-md-12 col-lg-12 py-3 mt-5">
               <div class="d-flex align-items-center">
                 <div class="to-admin me-auto">
-                  <h4>Enviar email a Kiril Stefanov</h4>
+                  <h4>Enviar email a {{adminToContact.name}} {{adminToContact.lastname}}</h4>
                 </div>
-              <button (click)="openContact()" class="close ms-auto btn btn-dark" aria-label="Close">
+              <button (click)="closeContact()" class="close ms-auto btn btn-dark" aria-label="Close">
                 <span aria-hidden="true">X</span>
               </button>
             </div>
               <div class="form-group mb-2">
                 <label for="mail">Email</label>
-                <input type="email" class="form-control" id="mail" />
+                <input type="email" class="form-control" id="mail" [(ngModel)]="adminToContact.email"/>
               </div>
               <div class="form-group mb-2">
-                <label for="mail">Asunto</label>
-                <input type="text" class="form-control" id="mail" />
+                <label for="subject">Asunto</label>
+                <input type="text" class="form-control" id="subject" #subject/>
               </div>
               <div class="form-group mb-2">
                 <label for="exampleFormControlTextarea1">Mensaje</label>
@@ -113,10 +113,11 @@
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="10"
+                  #message
                 ></textarea>
               </div>
               <div class="d-flex justify-content-center">
-                <button class="mt-3 btn btn-dark">Enviar mensaje</button>
+                <button (click)="sendEmailAdmins(subject.value, message.value)" class="mt-3 btn btn-dark">Enviar mensaje</button>
               </div>
             </div>
           </div>

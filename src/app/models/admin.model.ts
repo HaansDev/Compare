@@ -4,4 +4,5 @@ export class Admin {
   email?: string;
   name?: string;
   lastname?: string;
+  _id?: any;
 }

@@ -22,7 +22,7 @@ export class ControlComponent implements OnInit {
       })
       this.getEightLaptops()
       this.getPages()
-      console.log(this.page)
+      // console.log(this.page)
   }
 
   someLaptops: Array<Laptop> = [];
@@ -44,13 +44,12 @@ export class ControlComponent implements OnInit {
     this.router.navigate(['/dashboard/control/' + page]);
     this.activateRoute.params.subscribe( params => {
       page = params.page
-      console.log(typeof page)
-      console.log(page)
+
       this.getPages()
       this.getEightLaptops();
     })
 
-    console.log(page)
+
 
   }
 
@@ -59,8 +58,8 @@ export class ControlComponent implements OnInit {
     if(this.page < this.totalPages){
     this.postPage = (parseInt(this.page + "") + 1)
 
-    console.log(this.postPage)
-    console.log(this.page)
+    // console.log(this.postPage)
+    // console.log(this.page)
     this.goPage(this.postPage)
   } else {
     this.goPage(this.totalPages)
@@ -74,8 +73,8 @@ export class ControlComponent implements OnInit {
     if(this.page > 1){
   this.prePage = this.page - 1
 
-  console.log(this.prePage)
-  console.log(this.page)
+  // console.log(this.prePage)
+  // console.log(this.page)
   this.goPage(this.prePage)
 }
   else{
