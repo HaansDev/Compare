@@ -28,4 +28,15 @@ export class UserService {
     );
   }
 
+  sendEmailNewUser(destination: string): Observable<any> {
+    const params = {destination: destination};
+    return this.httpClient
+      .get(`${environment.apiUrl}/sendPageToNewUser`, {params: params})
+      .pipe(
+        catchError((error) => {
+          return error;
+        })
+      );
+  }
+
 }
