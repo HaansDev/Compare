@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,22 +8,22 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-    transparent: boolean = true
+    transparent: boolean = false
     sticky: boolean = false
     dark: boolean = false
 
-    constructor(private router: Router) { }
+    constructor(private activateRoute: ActivatedRoute, private router: Router) { }
 
     ngOnInit() {
     this.router.events.subscribe( route => {
 
       if(route instanceof NavigationEnd) {
-        if(route.url == "/laptops") {
-          this.transparent = false
-          this.dark = true
+        if(route.url == "/") {
+          this.transparent = true
+          this.dark = false
         } else {
-            this.transparent = true
-            this.dark = false
+            this.transparent = false
+            this.dark = true
         }
       }
 

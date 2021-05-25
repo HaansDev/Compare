@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LaptopsService } from '../../services/laptops.service';
 import { Laptop } from '../../models/laptop.model';
 
 @Component({
@@ -9,11 +10,22 @@ import { Laptop } from '../../models/laptop.model';
 })
 export class LaptopsComponent implements OnInit {
     currentValues = [0, 0];
+    someLaptops: Array<Laptop> = [];
+    allLaptops: Array<Laptop> = [];
+    page!: number;
+    prevPage!: number;
+    nextPage!: number;
+    totalPages!: number;
+    pages: Array<number> = [];
 
-
-    constructor(private activeRoute: ActivatedRoute, private router: Router) { }
+    constructor(private activateRoute: ActivatedRoute, private router: Router, private laptopsService: LaptopsService) { }
 
     ngOnInit(): void {
+        this.activateRoute.params.subscribe( params => {
+            this.page = params.page
+          })
+          this.getPullLaptops()
+          this.getPages()
     }
     onSliderChange(selectedValues: number[]) {
         this.currentValues = selectedValues;
@@ -21,198 +33,53 @@ export class LaptopsComponent implements OnInit {
     detailLaptop(id: any) {
       this.router.navigate(["laptop/" + id ])
     }
-    laptops = [
-      {
-      image: "../../../../assets/images/laptop1.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7588"
-
-    },
-    {
-      image: "../../../../assets/images/laptop2.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7589"
-    },
-    {
-      image: "../../../../assets/images/laptop1.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7585"
-    },
-    {
-      image: "../../../../assets/images/laptop2.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7587"
-    },
-    {
-      image: "../../../../assets/images/laptop1.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7586"
-    },
-    {
-      image: "../../../../assets/images/laptop2.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7580"
-    },
-    {
-      image: "../../../../assets/images/laptop1.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7581"
-    },
-    {
-      image: "../../../../assets/images/laptop2.jpg",
-      brand: "Asus",
-      model: "Inspire+",
-      price: 1000,
-      fabric_date: "20/12/2021",
-      cpu: "Intel Core i5-10210U",
-      cpu_core: 4,
-      cpu_speed: 3.9,
-      ram_type: "DDR4 5DRAM",
-      ram_speed: 2800,
-      ram_size: 16,
-      ram_expand: 4,
-      graphics: "NVIDIA GTX-1050",
-      resolution: "1440x990",
-      rom: "1 TB SSD",
-      hdmi: "Si",
-      usb: "2 puertos USB 2.0 y 1 puerto USB 3.0",
-      battery: 5550,
-      os: "Windows 10",
-      weight: 2.5,
-      valoration: 4.6,
-      _id: "606d5fc2b278be3fd63c7582"
-    },]
+    getPullLaptops()  {
+        this.laptopsService.getPaginationLaptops(this.page).subscribe(
+          (data: Laptop[]) => {
+            this.someLaptops = data;
+            // console.log(data);
+          },
+          (error) => {
+            console.log('Error:', error);
+          }
+        );
+    }
+    getPages() {
+        this.laptopsService.getAllLaptops().subscribe(
+            (data: Laptop[]) => {
+                this.allLaptops = data;
+                this.totalPages = Math.ceil(this.allLaptops.length/12);
+                this.pages = Array.from({length: this.totalPages}, (_, i) => i + 1);
+            },
+            (error: any) => {
+                console.log('Error:', error);
+            }
+        );
+    }
+    goPage(page: number) {
+        this.router.navigate(['/laptops/' + page]);
+        this.activateRoute.params.subscribe(params => {
+            page = params.page;
+            this.getPages();
+            this.getPullLaptops();
+        })
+    }
+    goNextPage() {
+        if (this.page < this.totalPages) {
+            this.nextPage = (parseInt(this.page + "") + 1)
+            console.log(this.nextPage)
+            console.log(this.page)
+            this.goPage(this.nextPage)
+        } else {
+          this.goPage(this.totalPages)
+        }
+    }
+    goPrevPage() {
+        if (this.page > 1) {
+            this.prevPage = this.page - 1
+            this.goPage(this.prevPage)
+        } else{
+            this.goPage(1)
+        }
+    }
 }
