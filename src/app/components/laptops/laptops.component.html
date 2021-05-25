@@ -79,7 +79,7 @@
     <div class="colum-laptops">
         <div class="row">
 
-            <div *ngFor="let laptop of laptops" class="col-sm-6 col-md-4 col-lg-3">
+            <div *ngFor="let laptop of someLaptops" class="col-sm-6 col-md-4 col-lg-3">
 
                       <div class="card">
                         <div class="card-img-top" [ngStyle]="{ 'background-image': 'url(' + laptop.image + ')' }"></div>
@@ -92,87 +92,21 @@
                       </div>
 
             </div>
-            <!-- <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                      <div class="card">
-                        <img src="../../../assets/images/laptop1.jpg" class="card-img-top"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Prueba</h5>
-                          <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-            </div> -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center mt-5">
+                <li class="page-item">
+                  <a class="page-link" (click)="goPrevPage()" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li *ngFor="let item of pages; let p = index" class="page-item" [ngClass]="{'active': item == page}"><a class="page-link" (click)="goPage(item)">{{item}}</a></li>
+                <li class="page-item">
+                  <a class="page-link" (click)="goNextPage()" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
         </div>
     </div>
 </div>

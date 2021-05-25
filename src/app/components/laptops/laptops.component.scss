@@ -63,3 +63,21 @@
         float: right;
     }
 }
+.active{
+  .page-link{
+  background: black;
+  color: white
+
+  }
+}
+.page-link{
+  color: black;
+  cursor: pointer;
+}
+
+.actions{
+
+  img{
+    margin-left: 1rem;
+  }
+}

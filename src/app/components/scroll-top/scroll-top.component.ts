@@ -7,7 +7,7 @@ import { ViewportScroller } from "@angular/common";
   styleUrls: ['./scroll-top.component.scss']
 })
 export class ScrollTopComponent implements OnInit {
-    pageYoffset = 0;
+    pageYoffset: number = 0;
     windowScrolled: boolean = false;
     constructor(private scroll: ViewportScroller) { }
 
