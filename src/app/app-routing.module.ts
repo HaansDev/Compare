@@ -17,7 +17,7 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
-    { path: "laptops", component: LaptopsComponent },
+    { path: "laptops", component: LaptopsComponent},
     // AÑADIR ID
     { path: "laptop/:id", component: DetailLaptopComponent },
     { path: "compare", component: CompareLaptopsComponent },

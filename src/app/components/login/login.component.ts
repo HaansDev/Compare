@@ -1,3 +1,5 @@
+import { UserService } from './../../services/user.service';
+import { User } from './../../models/user.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
     this.mForm = this.fb.group({
       email: [
         '',
@@ -58,20 +60,20 @@ export class LoginComponent implements OnInit {
 
 
     //Hacer llamada al servicio
-    //Dos servicios user y people
-  // //   const user: User = new User();
-  // //   user.email = this.f.email.value;
-  // //   user.password =  this.f.password.value;
-  // //   this.userService.login(user).subscribe(
-  // //     (data: any) => {
-  // //       localStorage.setItem("token", data.access_token)
-  // //       this.router.navigate(['/dashboard']);
-  // //       console.log(data);
-  // //     },
-  // //     (error) => {
-  // //       console.log('Error:', error);
-  // //     }
-  // //   );
+    //Dos servicios user y laptops
+    const user: User = new User();
+    user.email = this.f.email.value;
+    user.password =  this.f.password.value;
+    this.userService.login(user).subscribe(
+      (data: any) => {
+        localStorage.setItem("token_user", data.access_token)
+        this.router.navigate(['/laptops']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('Error:', error);
+      }
+    );
   }
 
 

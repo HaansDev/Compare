@@ -1,3 +1,4 @@
+import { User } from './../../models/user.model';
 import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -59,18 +60,19 @@ export class RegisterComponent implements OnInit {
       console.log("El formulario es válido");
     }
 
-    // const user: User = new User();
-    // user.email = this.f.email.value;
-    // user.password =  this.f.password.value;
-    // this.userService.signup(user).subscribe(
-    //   (data) => {
-    //     console.log(data);
-    //     this.router.navigate(['/login']);
-    //   },
-    //   (error) => {
-    //     console.log('Error:', error);
-    //   }
-    // );
+    const user: User = new User();
+    user.email = this.f.email.value;
+    user.password =  this.f.password.value;
+    user.username = this.f.username.value;
+    this.userService.signup(user).subscribe(
+      (data) => {
+        console.log(data);
+        this.router.navigate(['/login']);
+      },
+      (error) => {
+        console.log('Error:', error);
+      }
+    );
 
 }
 

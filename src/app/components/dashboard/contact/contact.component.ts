@@ -99,5 +99,8 @@ export class ContactComponent implements OnInit {
         console.log('Error:', error);
       }
     );
+
+    this.isContact = false
   }
+
 }
