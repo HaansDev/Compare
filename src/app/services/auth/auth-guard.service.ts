@@ -7,11 +7,27 @@ import { Injectable } from '@angular/core';
 })
 export class AuthGuardService implements CanActivate {
   constructor(public auth: AuthService, public router: Router) {}
+
+
+  // canActivate(): boolean {
+  //   if (!this.auth.isAdminAuthenticated()) {
+  //     this.router.navigate(['/dashboardlogin']);
+  //     return false;
+  //   }
+  //   return true;
+
+  // }
+
   canActivate(): boolean {
-    if (!this.auth.isAuthenticated()) {
+    if (!this.auth.isAdminAuthenticated()) {
       this.router.navigate(['/dashboardlogin']);
       return false;
     }
     return true;
+
   }
+
+
+
+
 }

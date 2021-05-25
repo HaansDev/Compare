@@ -67,7 +67,7 @@ export class LoginDashboardComponent implements OnInit {
     user.password =  this.f.password.value;
     this.adminService.login(user).subscribe(
       (data: any) => {
-        localStorage.setItem("token", data.access_token)
+        localStorage.setItem("token", data.access_token_admin)
         this.router.navigate(['/dashboard']);
         console.log(data);
       },
