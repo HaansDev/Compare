@@ -38,7 +38,15 @@ export class LaptopsService {
           })
         );
     }
-
+    getPaginationLaptops(page: number): Observable<any> {
+        return this.httpClient
+          .get(`${environment.apiUrl}/pagelaptops/${page}`)
+          .pipe(
+            catchError((error) => {
+              return error;
+            })
+          );
+    }
     getAllLaptops(): Observable<any> {
 
       return this.httpClient
