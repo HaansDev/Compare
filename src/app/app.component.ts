@@ -59,4 +59,20 @@ export class AppComponent {
 
 }
 
+
+
+  laptops: any[] = ["andrey"];
+
+  toCompare(newItem: any) {
+    console.log(newItem)
+    this.laptops.push(newItem);
+    console.log(this.laptops)
+  }
+
+
+
+
+// Aqui es donde el padre recibe del hijo mediante el newItemEvent del html los datos
+
+
 }

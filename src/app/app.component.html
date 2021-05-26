@@ -1,5 +1,9 @@
 <app-navbar *ngIf="!isLogin"></app-navbar>
-<router-outlet></router-outlet>
+<!-- <app-detail-laptop (newItemEvent)="toCompare($event)"></app-detail-laptop> -->
+<router-outlet (newItemEvent)="toCompare($event)"></router-outlet>
 <app-footer *ngIf="!isLogin"></app-footer>
 <app-scroll-top *ngIf="!isLogin"></app-scroll-top>
-<app-cart-laptops *ngIf="!isLogin"></app-cart-laptops>
+<app-cart-laptops *ngFor="let laptop of laptops" [newlaptop]="laptop"></app-cart-laptops>
+
+
+<!-- Aqui es donde está el problema que con router outlet no ataca directamente al hijo app-detail-laptop sino a todos -->

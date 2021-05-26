@@ -1,16 +1,19 @@
 <!-- Default dropup button -->
 <div class="btn-group dropup cart-laptops">
 
-    <button type="button" class="btn dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        Añadir portatil<br>a comparación
+    <button (click)="probando()" type="button" class="btn dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="../../assets/images/Logo-cabeceraScroll.svg" alt="Logo compare" class="image-logo">
     </button>
     <div class="dropdown-menu">
         <div class="buttons-cart">
             <button class="btn btn-primary" type="button" name="comparar">Comparar</button>
             <button class="btn btn-add" type="button" name="add"></button>
             <ul class="list-laptops">
-                <li class="list-item-laptop">Laptop 1</li>
+                <li class="list-item-laptop">{{newlaptop}}</li>
             </ul>
         </div>
     </div>
 </div>
+
+
+<!-- Aquí se envia el newlaptop recibido del padre-->
