@@ -2,6 +2,7 @@
 .cart-laptops {
     position: fixed;
     height: 70px;
+    width: 200px;
     left: 15px;
     bottom: 15px;
     background: linear-gradient(257.87deg, #B200F1 8.95%, #6C50E7 56.11%, #5867E4 86.97%);
@@ -13,4 +14,9 @@
             box-shadow: none;
         }
     }
+}
+
+.image-logo{
+  width: 80%;
+  height: auto;
 }
