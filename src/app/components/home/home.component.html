@@ -5,27 +5,38 @@
     </div>
     <span id="description-search">Comparamos especificaciones de portátiles</span>
     <div class="input-search">
-        <input type="text" placeholder="Busca portátiles" />
-        <button type="button" class="btn btn-search">Ver portatil</button>
+        <input #name type="text" placeholder="Busca portátiles" (keydown.enter)="search(name.value)"/>
+        <button type="button" class="btn btn-search" (click)="search(name.value)">Ver portatil</button>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container valorations">
     <div id="title-valoracionesHome">
-        <h1>Mejores valoraciones en Amazon</h1>
+        <h1>Mejores valoraciones por los usuarios</h1>
     </div>
     <!-- Fila 1  -->
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <div *ngFor="let laptop of bestLaptops" class="col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
+                <img src="{{laptop.image}}" class="card-img-top" alt="Imagen laptop">
                 <div class="card-body">
-                  <h5 class="card-title">Laptop 1</h5>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{laptop.brand}} {{laptop.model}}</h5>
+                  <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                      <span class="half" [style.width.%]="fill">
+                        &#9733;
+                  </span>
+                  &#9733;
+                    </span>
+                  </ng-template>
+
+                  <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                  <br>
+                  <a (click)="detailLaptop(laptop._id)" class="btn btn-dark" >Ver características</a>
                 </div>
               </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <!-- <div class="col-sm-6 col-md-4 col-lg-3">
               <div class="card">
                 <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
                 <div class="card-body">
@@ -42,10 +53,10 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- Fila 2 -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-sm-6 col-md-4 col-lg-3">
               <div class="card">
                 <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
@@ -73,7 +84,7 @@
                   </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="container-eleccion">
     <div class="eleccion">

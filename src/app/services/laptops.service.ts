@@ -29,7 +29,18 @@ export class LaptopsService {
     );
   }
 
-  getLaptops(filter: string, minPrice: string, maxPrice: string, cpuAMD: string, cpuINTEL: string, cpuMONE: string, graphicsAMD: string, graphicsNVIDIA: string, graphicsINTEGRATED: string, romHDD: string, romSSD: string, ram_typeTHREE: string, ram_typeFOUR: string): Observable<any> {
+  getLaptopsPagination(page: number, filter: string, minPrice: string, maxPrice: string, cpuAMD: string, cpuINTEL: string, cpuMONE: string, graphicsAMD: string, graphicsNVIDIA: string, graphicsINTEGRATED: string, romHDD: string, romSSD: string, ram_typeTHREE: string, ram_typeFOUR: string): Observable<any> {
+    const params = { filter: filter, minPrice: minPrice, maxPrice: maxPrice, cpuAMD: cpuAMD, cpuINTEL: cpuINTEL, cpuMONE: cpuMONE, graphicsAMD: graphicsAMD, graphicsNVIDIA: graphicsNVIDIA, graphicsINTEGRATED: graphicsINTEGRATED, romHDD: romHDD, romSSD: romSSD, ram_typeTHREE: ram_typeTHREE, ram_typeFOUR: ram_typeFOUR};
+    return this.httpClient
+      .get(`${environment.apiUrl}/laptops/${page}`, { params: params })
+      .pipe(
+        catchError((error) => {
+          return error;
+        })
+      );
+  }
+
+  getLaptops( filter: string, minPrice: string, maxPrice: string, cpuAMD: string, cpuINTEL: string, cpuMONE: string, graphicsAMD: string, graphicsNVIDIA: string, graphicsINTEGRATED: string, romHDD: string, romSSD: string, ram_typeTHREE: string, ram_typeFOUR: string): Observable<any> {
     const params = { filter: filter, minPrice: minPrice, maxPrice: maxPrice, cpuAMD: cpuAMD, cpuINTEL: cpuINTEL, cpuMONE: cpuMONE, graphicsAMD: graphicsAMD, graphicsNVIDIA: graphicsNVIDIA, graphicsINTEGRATED: graphicsINTEGRATED, romHDD: romHDD, romSSD: romSSD, ram_typeTHREE: ram_typeTHREE, ram_typeFOUR: ram_typeFOUR};
     return this.httpClient
       .get(`${environment.apiUrl}/laptops`, { params: params })
@@ -49,6 +60,8 @@ export class LaptopsService {
           })
         );
     }
+
+
     getPaginationLaptops(page: number): Observable<any> {
         return this.httpClient
           .get(`${environment.apiUrl}/pagelaptops/${page}`)
@@ -58,10 +71,22 @@ export class LaptopsService {
             })
           );
     }
+
     getAllLaptops(): Observable<any> {
 
       return this.httpClient
         .get(`${environment.apiUrl}/alllaptops`)
+        .pipe(
+          catchError((error) => {
+            return error;
+          })
+        );
+    }
+
+    getBestLaptops(): Observable<any> {
+
+      return this.httpClient
+        .get(`${environment.apiUrl}/bestlaptops`)
         .pipe(
           catchError((error) => {
             return error;

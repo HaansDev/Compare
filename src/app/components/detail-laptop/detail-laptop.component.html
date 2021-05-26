@@ -1,15 +1,15 @@
 <div class="container-fluid">
     <div class="row">
         <div class="image">
-            <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
+            <img src="{{laptop.image}}" class="card-img-top" alt="Imagen laptop">
         </div>
         <div class="laptop-entry">
-            <h2 class="title-laptop">HP Pavilion 15-eg0005ns Intel Core i5-1135G7/8GB/512GB SSD/MX350/15.6"</h2>
+            <h2 class="title-laptop">{{laptop.brand}} {{laptop.model}} {{laptop.cpu}}-{{laptop.cpu_speed}}/{{laptop.ram_size}}/{{laptop.rom}}/{{laptop.resolution}}</h2>
             <div class="box-price-amazon">
-                <a href="#">
-                    <div class="price-amazon">
-                        <span class="price">1000€</span>
-                        <img class="logo-amazon" src="../../../assets/images/amazon-logo.png" alt="Logo Amazon"/>
+                <a href="{{laptop.url}}">
+                    <div class="price-amazon p-2">
+                        <span class="price">{{laptop.price}} €</span>
+                        <img class="logo-amazon" src="../../../assets/images/Nuevo-Logo-PcComponentes.jpg" alt="Logo Amazon"/>
                     </div>
                 </a>
             </div>
@@ -23,7 +23,7 @@
         </span>
       </ng-template>
 
-      <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+      <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
             </div>
         </div>
     </div>
@@ -31,57 +31,62 @@
 <div class="container">
     <h2 class="title-tecnico">Detalles técnicos</h2>
     <div class="row">
+      <div class="col-4">Marca</div>
+      <div class="col-6">{{laptop.brand}}</div>
+  </div>
+  <hr class="container-separator">
+    <div class="row">
         <div class="col-4">Modelo</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.model}}</div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Fecha de fabricación</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{formatDate(laptop.fabric_date)}}</div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Procesador</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6"><p>{{laptop.cpu}}</p><p>{{laptop.cpu_core}} Núcleos</p><p>{{laptop.cpu_speed}} GHz</p></div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Memoria RAM</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6"><p>{{laptop.ram_type}}</p><p>{{laptop.ram_size}} GB</p><p>Ampliable {{laptop.ram_expand}} GB</p><p>{{laptop.ram_speed}} MHz</p></div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Gráfica</div>
-        <div class="col-6">Lorem Ipsum</div>
-    </div>
-    <hr class="container-separator">
-    <div class="row">
-        <div class="col-4">Pantalla</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.graphics}}</div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Almacenamiento</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.rom}}</div>
     </div>
     <hr class="container-separator">
     <div class="row">
-        <div class="col-4">Puerto E/S</div>
-        <div class="col-6">Lorem Ipsum</div>
+      <div class="col-4">Pantalla</div>
+      <div class="col-6">{{laptop.resolution}}</div>
+  </div>
+  <hr class="container-separator">
+    <div class="row">
+        <div class="col-4">Puertos</div>
+        <div class="col-6"><p>Hdmi: {{laptop.hdmi}}</p><p>USB: {{laptop.usb}}</p></div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Sistema Operativo</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.os}}</div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Batería</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.battery}} mAh</div>
     </div>
     <hr class="container-separator">
     <div class="row">
         <div class="col-4">Peso</div>
-        <div class="col-6">Lorem Ipsum</div>
+        <div class="col-6">{{laptop.weight}} kg.</div>
     </div>
 </div>

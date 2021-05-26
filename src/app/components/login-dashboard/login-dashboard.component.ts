@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth/auth.service';
 import { Admin } from './../../models/admin.model';
 import { AdminService } from './../../services/admin.service';
 import { Router } from '@angular/router';
@@ -17,7 +18,7 @@ export class LoginDashboardComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder, private router: Router, private adminService: AdminService,) {
+  constructor(private fb: FormBuilder, private router: Router, private adminService: AdminService, private authService: AuthService) {
     this.mForm = this.fb.group({
       adminID: [
         '',
@@ -36,7 +37,16 @@ export class LoginDashboardComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+
+    if (this.authService.isAdminAuthenticated()){
+      this.router.navigate(["/dashboard"])
+    } else {
+      this.router.navigate(["/dashboardlogin"])
+    }
+
+  }
 
   get f() {
     return this.mForm.controls;

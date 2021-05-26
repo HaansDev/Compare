@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   isSend = false;
 
 
-
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
     this.mForm = this.fb.group({
       email: [
@@ -54,7 +53,7 @@ export class LoginComponent implements OnInit {
       console.error('El formulario NO es válido');
       return;
     } else {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/']);
       console.log('El formulario es válido');
     }
 
@@ -67,7 +66,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(user).subscribe(
       (data: any) => {
         localStorage.setItem("token_user", data.access_token)
-        this.router.navigate(['/laptops']);
+        this.router.navigate(['/']);
         console.log(data);
       },
       (error) => {

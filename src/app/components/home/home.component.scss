@@ -74,6 +74,8 @@
             margin-bottom: 20px;
         }
         .card {
+
+          min-height: 500px;
             .card-img-top {
                 width: 70%;
                 margin: auto;
@@ -133,4 +135,25 @@
             border: 0;
         }
     }
+}
+
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 1.75rem;
+  color: #d3d3d3;
+}
+.full {
+  color: rgb(255, 196, 0);
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: rgb(255, 196, 0);
+}
+
+.valorations{
+  z-index: 1;
 }

@@ -1,11 +1,15 @@
 @import '../../../styles';
-.transparent { background: transparent; }
-.dark { background: $cBlackTheme; }
+.transparent {
+  background: transparent;
+}
+.dark {
+  background: $cBlackTheme;
+}
 .navbar {
     /*  */
     position: fixed !important;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     /* */
 
     img { width: 190px; }
@@ -28,18 +32,41 @@
                 left: 1720px;
                 top: 14px;
                 float: right;
-                background: $cWhite;
-                color: $cBlackButton;
+
                 border-radius: 60px;
                 border: 0;
+                font-weight: 500;
+
             }
         }
     }
 }
 .sticky {
     background: $cBlackTheme;
-    z-inde: 999;
+    z-index: 999;
 }
+
+.btn-sign-dark{
+  background: white;
+  color: black;
+
+
+  &:hover{
+    background: linear-gradient(175.93deg, #5867E4 -10.23%, #B200F1 117.03%);
+    color: white;
+  }
+}
+
+.btn-sign-transparent{
+  background: white;
+  color: black;
+
+  &:hover{
+    background: black;
+    color: white;
+  }
+}
+
 
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
