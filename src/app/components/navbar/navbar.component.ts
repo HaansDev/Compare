@@ -42,4 +42,10 @@ export class NavbarComponent implements OnInit {
 
       }
 
+
+      toLogin(){
+
+        this.router.navigate(["/login"])
+      }
+
 }
