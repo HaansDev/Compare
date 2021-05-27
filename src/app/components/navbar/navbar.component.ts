@@ -10,7 +10,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 export class NavbarComponent implements OnInit {
     transparent: boolean = false
     sticky: boolean = false
-    dark: boolean = false
+    dark: boolean = true
 
     constructor(private activateRoute: ActivatedRoute, private router: Router) { }
 
@@ -26,7 +26,6 @@ export class NavbarComponent implements OnInit {
             this.dark = true
         }
       }
-
     })
   }
 
