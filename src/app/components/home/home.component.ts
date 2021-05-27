@@ -44,7 +44,9 @@ export class HomeComponent implements OnInit {
       }
     );
   }
-
+    toGuideChooseLaptop() {
+        this.router.navigate(["/guide-choose-laptop"])
+    }
 
 
 }

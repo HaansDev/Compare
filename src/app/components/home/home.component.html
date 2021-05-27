@@ -14,7 +14,6 @@
     <div id="title-valoracionesHome">
         <h1>Mejores valoraciones por los usuarios</h1>
     </div>
-    <!-- Fila 1  -->
     <div class="row">
         <div *ngFor="let laptop of bestLaptops" class="col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="card">
@@ -29,68 +28,19 @@
                   &#9733;
                     </span>
                   </ng-template>
-
                   <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
                   <br>
                   <a (click)="detailLaptop(laptop._id)" class="btn btn-dark" >Ver características</a>
                 </div>
               </div>
         </div>
-        <!-- <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
-                <div class="card-body">
-                  <h5 class="card-title">Laptop 2</h5>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
-                  <div class="card-body">
-                    <h5 class="card-title">Laptop 3</h5>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-            </div>
-        </div> -->
     </div>
-    <!-- Fila 2 -->
-    <!-- <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
-                <div class="card-body">
-                  <h5 class="card-title">Laptop 1</h5>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
-                <div class="card-body">
-                  <h5 class="card-title">Laptop 2</h5>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <img src="../../../assets/images/laptop1.jpg" class="card-img-top" alt="Imagen laptop">
-                  <div class="card-body">
-                    <h5 class="card-title">Laptop 3</h5>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-            </div>
-        </div>
-    </div> -->
 </div>
 <div class="container-eleccion">
     <div class="eleccion">
         <span class="subhead-eleccion">Guía como elegir portatil</span>
         <h1 class="title-eleccion">¿Quieres saber cómo elegir tu portatil ideal?</h1>
         <p>En la guía encontrarás detalladamente como elegir un portatil, según la finalidad que le vayas a dar, teniendo en cuenta su hardware.</p>
-        <button class="btn btn-outline-success" type="submit">Ver más</button>
+        <button (click)="toGuideChooseLaptop()" class="btn btn-outline-success" type="submit" >Ver más</button>
     </div>
 </div>

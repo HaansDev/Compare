@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.component';
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
 import { LaptopsComponent } from './components/laptops/laptops.component';
+import { GuideChooseLaptopComponent } from './components/guide-choose-laptop/guide-choose-laptop.component';
+
 
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
@@ -21,6 +23,7 @@ const routes: Routes = [
     { path: "laptops/:page", component: LaptopsComponent },
     { path: "laptop/:id", component: DetailLaptopComponent },
     { path: "compare/:id", component: CompareLaptopsComponent },
+    { path: "guide-choose-laptop", component: GuideChooseLaptopComponent },
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     { path: "dashboardlogin", component: LoginDashboardComponent },
