@@ -13,7 +13,7 @@ export class UserService {
 
 
   signup(user: User): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/signup`, user).pipe(
+    return this.httpClient.post(`${environment.apiUrl}signup`, user).pipe(
       catchError((error) => {
         return error;
       })
@@ -21,7 +21,7 @@ export class UserService {
   }
 
   login(user: User): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/login`, user).pipe(
+    return this.httpClient.post(`${environment.apiUrl}login`, user).pipe(
       catchError((error) => {
         return error;
       })
@@ -31,7 +31,7 @@ export class UserService {
   sendEmailNewUser(destination: string): Observable<any> {
     const params = {destination: destination};
     return this.httpClient
-      .get(`${environment.apiUrl}/sendPageToNewUser`, {params: params})
+      .get(`${environment.apiUrl}sendPageToNewUser`, {params: params})
       .pipe(
         catchError((error) => {
           return error;
