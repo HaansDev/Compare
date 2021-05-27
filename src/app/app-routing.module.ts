@@ -19,9 +19,8 @@ const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
     { path: "laptops", redirectTo: "laptops/1", pathMatch:"full" },
     { path: "laptops/:page", component: LaptopsComponent },
-    // AÑADIR ID
     { path: "laptop/:id", component: DetailLaptopComponent },
-    { path: "compare", component: CompareLaptopsComponent },
+    { path: "compare/:id", component: CompareLaptopsComponent },
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     { path: "dashboardlogin", component: LoginDashboardComponent },

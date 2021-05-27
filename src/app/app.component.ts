@@ -61,7 +61,7 @@ export class AppComponent {
 
 
 
-  laptops: any[] = ["andrey"];
+  laptops: any[] = ["Prueba"];
 
   toCompare(newItem: any) {
     console.log(newItem)

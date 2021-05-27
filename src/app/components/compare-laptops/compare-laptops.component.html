@@ -1,1 +1,113 @@
-<p>compare-laptops works!</p>
+<div class="container-fluid">
+    <div class="logo">
+        <img src="../../assets/images/LOGO-COMPARISON.svg" alt="Logo compare">
+    </div>
+    <div class="box-title">
+        <span class="title">Comparativa</span>
+    </div>
+    <div class="close-comparison">
+        <a routerLink="/laptops"><i class="fas fa-times"></i></a>
+    </div>
+</div>
+<div class="container">
+    <div class="box-compare" *ngFor="let laptop of listLaptops">
+        <div class="row">
+            <div class="col-3">
+                <h2 class="title-tecnico">Valoraciones</h2>
+            </div>
+            <div class="col-auto">
+                <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">
+                     &#9733;
+                    </span>
+                     &#9733;
+                    </span>
+                </ng-template>
+
+                <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h2 class="title-tecnico">Ficha técnica</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">Marca</div>
+            <div class="col-auto">{{laptop.brand}}</div>
+        </div>
+          <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Modelo</div>
+                <div class="col-auto">{{laptop.model}}</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Fecha de fabricación</div>
+                <div class="col-auto">{{formatDate(laptop.fabric_date)}}</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Procesador</div>
+                <div class="col-auto">
+                    <p>{{laptop.cpu}}</p>
+                    <p>{{laptop.cpu_core}} Núcleos</p>
+                    <p>{{laptop.cpu_speed}} GHz</p>
+                </div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Memoria RAM</div>
+                <div class="col-auto">
+                    <p>{{laptop.ram_type}}</p>
+                    <p>{{laptop.ram_size}} GB</p>
+                    <p>Ampliable {{laptop.ram_expand}} GB</p>
+                    <p>{{laptop.ram_speed}} MHz</p>
+                </div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Gráfica</div>
+                <div class="col-auto">{{laptop.graphics}}</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Almacenamiento</div>
+                <div class="col-auto">{{laptop.rom}}</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+              <div class="col-3">Pantalla</div>
+              <div class="col-auto">{{laptop.resolution}}</div>
+          </div>
+          <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Puertos</div>
+                <div class="col-auto">
+                    <p>Hdmi: {{laptop.hdmi}}</p>
+                    <p>USB: {{laptop.usb}}</p>
+                </div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Sistema Operativo</div>
+                <div class="col-auto">{{laptop.os}}</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Batería</div>
+                <div class="col-auto">{{laptop.battery}} mAh</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Peso</div>
+                <div class="col-auto">{{laptop.weight}} kg.</div>
+            </div>
+            <hr class="container-separator">
+            <div class="row">
+                <div class="col-3">Precio</div>
+                <div class="col-auto">{{laptop.price}} €</div>
+            </div>
+    </div>
+</div>

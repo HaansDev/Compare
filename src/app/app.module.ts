@@ -29,8 +29,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { NpnSliderModule } from "npn-slider";
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { CartLaptopsComponent } from './components/cart-laptops/cart-laptops.component';
-import { ComparisonComponent } from './components/comparison/comparison.component';
-import { ChooseLaptopComponent } from './components/choose-laptop/choose-laptop.component';
+
 
 @NgModule({
   declarations: [
@@ -51,8 +50,7 @@ import { ChooseLaptopComponent } from './components/choose-laptop/choose-laptop.
     LaptopsComponent,
     ScrollTopComponent,
     CartLaptopsComponent,
-    ComparisonComponent,
-    ChooseLaptopComponent,
+
   ],
   imports: [
     BrowserModule,
