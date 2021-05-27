@@ -6,7 +6,7 @@
         <div class="laptop-entry">
             <h2 class="title-laptop">{{laptop.brand}} {{laptop.model}} {{laptop.cpu}}-{{laptop.cpu_speed}}/{{laptop.ram_size}}/{{laptop.rom}}/{{laptop.resolution}}</h2>
             <div class="box-price-amazon">
-                <a href="{{laptop.url}}">
+                <a href="{{laptop.url}}" target="_blank">
                     <div class="price-amazon p-2">
                         <span class="price">{{laptop.price}} €</span>
                         <img class="logo-amazon" src="../../../assets/images/Nuevo-Logo-PcComponentes.jpg" alt="Logo Amazon"/>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="d-flex justify-content-start">
-          <button (click)="toCompare(laptop._id)" class="mt-3 btn btn-dark to-compare"><img src="../../../assets/icons/boton-circular-plus.svg"> Añadir al comparador</button>
+          <button (click)="addLaptop(laptop._id)" class="mt-3 btn btn-dark to-compare"><img src="../../../assets/icons/boton-circular-plus.svg"> Añadir al comparador</button>
         </div>
     </div>
 </div>

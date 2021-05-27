@@ -1,0 +1,91 @@
+@import '../../../styles';
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    .logo,.title,.close-comparison {
+        width: 20%;
+    }
+    .box-title {
+        text-align: center;
+        .title {
+            position: relative;
+            top: 30%;
+            font-size: 20px;
+        }
+    }
+    .close-comparison {
+        text-align: right;
+        i {
+            font-size: 50px;
+            color: $cTitleBlack;
+            &:hover {
+                color: $cBlackTheme;
+            }
+        }
+    }
+}
+.container {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    .box-compare {
+        margin-bottom: 80px;
+    }
+    .title-tecnico {
+        margin-bottom: 30px;
+    }
+    .row {
+        margin-bottom: 45px;
+        .col-3 {
+            flex: 0 0 auto;
+            width: 25%;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: #000;
+        }
+        .col-auto {
+            flex: 0 0 auto;
+            width: auto;
+            font-family: 'DM Sans', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 100%;
+            color: #000;
+        }
+    }
+    .container-separator { margin-bottom: 45px; }
+}
+
+.star {
+
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 1.75rem;
+
+  color: #ffffff;
+
+}
+
+.full {
+
+  color: rgb(255, 196, 0);
+
+}
+
+.half {
+
+  position: absolute;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  color: rgb(255, 196, 0);
+
+}

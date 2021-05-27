@@ -1,5 +1,8 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,  Router, NavigationEnd} from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
+import { CompareService } from './../../services/comparison/compare.service';
+import { Laptop } from '../../models/laptop.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart-laptops',
@@ -7,30 +10,33 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-laptops.component.scss']
 })
 export class CartLaptopsComponent implements OnInit {
+    listLaptops: Laptop[] = []
+    hidden: boolean = false
+    empty: string = "No hay portátiles en la comparativa"
 
-  @Input() newlaptop: any;
-  constructor(private active: ActivatedRoute) {
+    constructor(private active: ActivatedRoute, private router: Router, private CompareService: CompareService) { }
 
-    this.newlaptop =""
-   }
+    ngOnInit(): void {
+        this.CompareService.getLaptops$().subscribe(laptops => {
+                this.listLaptops = laptops
+                console.log(this.listLaptops)
+        })
+        // this.router.events.subscribe( route => {
+        //
+        //   if(route instanceof NavigationEnd) {
+        //     if(route.url == "/compare") {
+        //       this.hidden = true
+        //     } else {
+        //         this.hidden = false
+        //     }
+        //   }
+        //
+        // })
+    }
+    deleteLaptop(laptop: Laptop) {
+        this.CompareService.delLaptops(laptop)
+    }
 
-  ngOnInit(): void {
-  }
-
-  probando(){
-    console.log(this.newlaptop)
-  }
-
-  // idToCompare!: string;
-  // toCompare(){
-
-
-  //   this.active.params.subscribe( value =>{
-  //     this.idToCompare = value.id
-  //     console.log(this.idToCompare)
-  //    })
-
-  // }
 
 }
 

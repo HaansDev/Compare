@@ -1,19 +1,19 @@
-<!-- Default dropup button -->
-<div class="btn-group dropup cart-laptops">
-
-    <button (click)="probando()" type="button" class="btn dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="../../assets/images/Logo-cabeceraScroll.svg" alt="Logo compare" class="image-logo">
+<div class="btn-group dropup cart-laptops" [ngClass]="{ 'hidden': hidden }">
+    <button type="button" class="btn dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="title-comparison">Comparativa</span>
     </button>
     <div class="dropdown-menu">
         <div class="buttons-cart">
-            <button class="btn btn-primary" type="button" name="comparar">Comparar</button>
+            <button class="btn btn-compare" type="button" name="comparar" routerLink="/compare/:id">Comparar</button>
             <button class="btn btn-add" type="button" name="add"></button>
-            <ul class="list-laptops">
-                <li class="list-item-laptop">{{newlaptop}}</li>
-            </ul>
+            <table class="list-laptops">
+                <p class="listLaptopsEmpty" *ngIf="listLaptops.length === 0">{{empty}}</p>
+                <tr *ngFor="let laptop of listLaptops" class="file-laptop-car">
+                        <td class="image-laptop-list-compare" [ngStyle]="{ 'background-image': 'url(' + laptop.image + ')' }"></td>
+                        <td class="name-laptop-list-compare">{{ laptop.model }}.</td>
+                        <td class="del-laptop-list-compare"><a class="delete-icon" (click)="deleteLaptop(laptop)"><img class="icon me-3" src="../../../assets/icons/eliminar.svg"></a></td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
-
-
-<!-- Aquí se envia el newlaptop recibido del padre-->
