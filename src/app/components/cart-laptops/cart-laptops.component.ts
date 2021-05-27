@@ -10,16 +10,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./cart-laptops.component.scss']
 })
 export class CartLaptopsComponent implements OnInit {
-    listLaptops: Laptop[] = []
+    listLaptops: Array<Laptop> = [];
     hidden: boolean = false
     empty: string = "No hay portátiles en la comparativa"
+
+    alert!: boolean
 
     constructor(private active: ActivatedRoute, private router: Router, private CompareService: CompareService) { }
 
     ngOnInit(): void {
         this.CompareService.getLaptops$().subscribe(laptops => {
                 this.listLaptops = laptops
-                console.log(this.listLaptops)
+                // console.log(this.listLaptops)
         })
         // this.router.events.subscribe( route => {
         //
@@ -33,8 +35,57 @@ export class CartLaptopsComponent implements OnInit {
         //
         // })
     }
+
+
+    compareLaptops() {
+
+
+      if(this.listLaptops.length == 4){
+      this.router.navigate(["compare/" + this.listLaptops[0]._id + "/" + this.listLaptops[1]._id + "/" + this.listLaptops[2]._id + "/" + this.listLaptops[3]._id])
+      console.log(this.listLaptops)
+      window.scroll(0, 0);
+
+      this.alert = false
+      }
+
+      if(this.listLaptops.length == 3){
+        this.router.navigate(["compare/" + this.listLaptops[0]._id + "/" + this.listLaptops[1]._id + "/" + this.listLaptops[2]._id ])
+        console.log(this.listLaptops)
+        window.scroll(0, 0);
+
+        this.alert = false
+      }
+
+      if(this.listLaptops.length == 2){
+        this.router.navigate(["compare/" + this.listLaptops[0]._id + "/" + this.listLaptops[1]._id  ])
+        console.log(this.listLaptops)
+        window.scroll(0, 0);
+
+        this.alert = false
+      }
+
+      if(this.listLaptops.length <2 ){
+        this.alert = false
+        return
+
+      }
+
+      if(this.listLaptops.length > 4 ){
+        this.alert = true
+        return
+      }
+
+    }
+
     deleteLaptop(laptop: Laptop) {
         this.CompareService.delLaptops(laptop)
+        if(this.listLaptops.length > 4 ){
+          this.alert = true
+          return
+        } else{this.alert = false}
+
+
+
     }
 
 

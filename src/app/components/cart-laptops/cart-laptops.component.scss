@@ -11,9 +11,13 @@
         text-transform: capitalize;
         color: $cBlackTheme;
         font-size: 15px;
+        .badge{
+          background-color: #212529;
+          font-size: 15px;
+        }
     }
     .btn.dropdown {
-        background: #F7F7F7;
+        background: #d8d8d8;
         border-top-left-radius: 25px !important;
         border-top-right-radius: 0px !important;
         border-bottom-right-radius: 25px !important;

@@ -15,6 +15,7 @@ export class AppComponent {
   }
 
   isLogin: boolean = false
+  isCompare: boolean = false
   ngOnInit() {
     // const name = localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDZkYzJhMTJmYWU4ZTNjNjBkNjlhNGMiLCJpYXQiOjE2MTg4Mjg4MTAsImV4cCI6MTYxOTQzMzYxMH0.bJT5InthOzTkE_tLsTb3JcEQoeh9Vb-484xc2K0hhGA")
 
@@ -27,6 +28,22 @@ export class AppComponent {
         for (let i = 0; i < rutas.length; i++) {
           if(route.url.includes(rutas[i])){
             this.isLogin = true
+          }
+
+        }
+
+      }
+    })
+
+    this.router.events.subscribe (route=>{
+      if(route instanceof NavigationEnd){
+
+        // Rutas sin navbar ni footer
+        let rutas = ["/compare"]
+
+        for (let i = 0; i < rutas.length; i++) {
+          if(route.url.includes(rutas[i])){
+            this.isCompare= true
           }
 
         }
@@ -50,7 +67,7 @@ export class AppComponent {
         // }
 
 
-        if(route.url == "/"){
+        if(route.url == "/" || route.url == "/laptops" || route.url == "/laptop"){
           this.isLogin = false
         }
 
