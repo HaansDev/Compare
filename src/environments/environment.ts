@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://compare-backend.herokuapp.com/'//'http://localhost:3000',
 };
 
 /*

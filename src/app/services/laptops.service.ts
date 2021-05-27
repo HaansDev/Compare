@@ -13,7 +13,7 @@ export class LaptopsService {
   constructor(private httpClient: HttpClient) { }
 
   saveLaptop(laptop: Laptop): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/savelaptop`, laptop).pipe(
+    return this.httpClient.post(`${environment.apiUrl}savelaptop`, laptop).pipe(
       catchError((error) => {
         return error;
       })
@@ -22,7 +22,7 @@ export class LaptopsService {
 
 
   getLaptop(id: string): Observable<any> {
-    return this.httpClient.get(`${environment.apiUrl}/laptop/${id}`).pipe(
+    return this.httpClient.get(`${environment.apiUrl}laptop/${id}`).pipe(
       catchError(error => {
         return error;
       })
@@ -32,7 +32,7 @@ export class LaptopsService {
   getLaptopsPagination(page: number, filter: string, minPrice: string, maxPrice: string, cpuAMD: string, cpuINTEL: string, cpuMONE: string, graphicsAMD: string, graphicsNVIDIA: string, graphicsINTEGRATED: string, romHDD: string, romSSD: string, ram_typeTHREE: string, ram_typeFOUR: string): Observable<any> {
     const params = { filter: filter, minPrice: minPrice, maxPrice: maxPrice, cpuAMD: cpuAMD, cpuINTEL: cpuINTEL, cpuMONE: cpuMONE, graphicsAMD: graphicsAMD, graphicsNVIDIA: graphicsNVIDIA, graphicsINTEGRATED: graphicsINTEGRATED, romHDD: romHDD, romSSD: romSSD, ram_typeTHREE: ram_typeTHREE, ram_typeFOUR: ram_typeFOUR};
     return this.httpClient
-      .get(`${environment.apiUrl}/laptops/${page}`, { params: params })
+      .get(`${environment.apiUrl}laptops/${page}`, { params: params })
       .pipe(
         catchError((error) => {
           return error;
@@ -43,7 +43,7 @@ export class LaptopsService {
   getLaptops( filter: string, minPrice: string, maxPrice: string, cpuAMD: string, cpuINTEL: string, cpuMONE: string, graphicsAMD: string, graphicsNVIDIA: string, graphicsINTEGRATED: string, romHDD: string, romSSD: string, ram_typeTHREE: string, ram_typeFOUR: string): Observable<any> {
     const params = { filter: filter, minPrice: minPrice, maxPrice: maxPrice, cpuAMD: cpuAMD, cpuINTEL: cpuINTEL, cpuMONE: cpuMONE, graphicsAMD: graphicsAMD, graphicsNVIDIA: graphicsNVIDIA, graphicsINTEGRATED: graphicsINTEGRATED, romHDD: romHDD, romSSD: romSSD, ram_typeTHREE: ram_typeTHREE, ram_typeFOUR: ram_typeFOUR};
     return this.httpClient
-      .get(`${environment.apiUrl}/laptops`, { params: params })
+      .get(`${environment.apiUrl}laptops`, { params: params })
       .pipe(
         catchError((error) => {
           return error;
@@ -53,7 +53,7 @@ export class LaptopsService {
 
   getSomeLaptops(page: number): Observable<any> {
       return this.httpClient
-        .get(`${environment.apiUrl}/somelaptops/${page}`)
+        .get(`${environment.apiUrl}somelaptops/${page}`)
         .pipe(
           catchError((error) => {
             return error;
@@ -64,7 +64,7 @@ export class LaptopsService {
 
     getPaginationLaptops(page: number): Observable<any> {
         return this.httpClient
-          .get(`${environment.apiUrl}/pagelaptops/${page}`)
+          .get(`${environment.apiUrl}pagelaptops/${page}`)
           .pipe(
             catchError((error) => {
               return error;
@@ -75,7 +75,7 @@ export class LaptopsService {
     getAllLaptops(): Observable<any> {
 
       return this.httpClient
-        .get(`${environment.apiUrl}/alllaptops`)
+        .get(`${environment.apiUrl}alllaptops`)
         .pipe(
           catchError((error) => {
             return error;
@@ -86,7 +86,7 @@ export class LaptopsService {
     getBestLaptops(): Observable<any> {
 
       return this.httpClient
-        .get(`${environment.apiUrl}/bestlaptops`)
+        .get(`${environment.apiUrl}bestlaptops`)
         .pipe(
           catchError((error) => {
             return error;
@@ -97,7 +97,7 @@ export class LaptopsService {
 
   updateLaptop(laptop: Laptop): Observable<any> {
     return this.httpClient
-      .put(`${environment.apiUrl}/laptop/${laptop._id}`, laptop)
+      .put(`${environment.apiUrl}laptop/${laptop._id}`, laptop)
       .pipe(
         catchError((error) => {
           return error;
@@ -106,7 +106,7 @@ export class LaptopsService {
   }
 
   deleteLaptop(id: string): Observable<any> {
-    return this.httpClient.delete(`${environment.apiUrl}/laptop/${id}`).pipe(
+    return this.httpClient.delete(`${environment.apiUrl}laptop/${id}`).pipe(
       catchError((error) => {
         return error;
       })
