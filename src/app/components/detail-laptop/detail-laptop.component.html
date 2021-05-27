@@ -94,4 +94,19 @@
         <div class="col-4">Peso</div>
         <div class="col-6">{{laptop.weight}} kg.</div>
     </div>
+    <hr class="container-separator">
+    <div class="row">
+        <div class="col-4">Regístrate y valora este portátil</div>
+        <ng-template #t let-fill="fill">
+          <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill">
+              &#9733;
+        </span>
+        &#9733;
+          </span>
+        </ng-template>
+
+        <ngb-rating [(rate)]="laptop.valoration" [starTemplate]="t" [readonly]="false" [max]="5"></ngb-rating>
+    </div>
+
 </div>
