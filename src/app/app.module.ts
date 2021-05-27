@@ -30,6 +30,9 @@ import { NpnSliderModule } from "npn-slider";
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { CartLaptopsComponent } from './components/cart-laptops/cart-laptops.component';
 import { GuideChooseLaptopComponent } from './components/guide-choose-laptop/guide-choose-laptop.component';
+import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { GuideChooseLaptopComponent } from './components/guide-choose-laptop/gui
     ScrollTopComponent,
     CartLaptopsComponent,
     GuideChooseLaptopComponent,
+    LegalNoticeComponent,
+    PrivacyPolicyComponent,
+    AboutUsComponent,
 
   ],
   imports: [

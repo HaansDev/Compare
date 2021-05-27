@@ -14,7 +14,7 @@ export class AdminService {
 
 
   signup(admin: Admin): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/signupadmin`, admin).pipe(
+    return this.httpClient.post(`${environment.apiUrl}signupadmin`, admin).pipe(
       catchError((error) => {
         return error;
       })
@@ -22,7 +22,7 @@ export class AdminService {
   }
 
   login(admin: Admin): Observable<any> {
-    return this.httpClient.post(`${environment.apiUrl}/loginadmin`, admin).pipe(
+    return this.httpClient.post(`${environment.apiUrl}loginadmin`, admin).pipe(
       catchError((error) => {
         return error;
       })
@@ -30,7 +30,7 @@ export class AdminService {
   }
 
   adminDetail(): Observable<any> {
-    return this.httpClient.get(`${environment.apiUrl}/admin`)
+    return this.httpClient.get(`${environment.apiUrl}admin`)
       .pipe(
         catchError((error: any) => {
           return error;
@@ -40,7 +40,7 @@ export class AdminService {
 
   updateAdmin(admin: Admin): Observable<any> {
     return this.httpClient
-      .put(`${environment.apiUrl}/admin/${admin._id}`, admin)
+      .put(`${environment.apiUrl}admin/${admin._id}`, admin)
       .pipe(
         catchError((error) => {
           return error;
@@ -50,7 +50,7 @@ export class AdminService {
 
   getAdmins(): Observable<any> {
     return this.httpClient
-      .get(`${environment.apiUrl}/admins`)
+      .get(`${environment.apiUrl}admins`)
       .pipe(
         catchError((error) => {
           return error;
@@ -61,7 +61,7 @@ export class AdminService {
   sendEmailAdmins(destination: string, subject: string, message: string): Observable<any> {
     const params = {destination: destination, subject: subject, message: message};
     return this.httpClient
-      .get(`${environment.apiUrl}/sendAdminToAdmin`, {params: params})
+      .get(`${environment.apiUrl}sendAdminToAdmin`, {params: params})
       .pipe(
         catchError((error) => {
           return error;
