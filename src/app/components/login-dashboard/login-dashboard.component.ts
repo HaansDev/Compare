@@ -72,11 +72,12 @@ export class LoginDashboardComponent implements OnInit {
 
     //Hacer llamada al servicio
     //Dos servicios user y people
-    const user: Admin = new Admin();
-    user.adminID = this.f.adminID.value;
-    user.password =  this.f.password.value;
-    this.adminService.login(user).subscribe(
+    const admin: Admin = new Admin();
+    admin.adminID = this.f.adminID.value;
+    admin.password =  this.f.password.value;
+    this.adminService.login(admin).subscribe(
       (data: any) => {
+
         localStorage.setItem("token", data.access_token_admin)
         this.router.navigate(['/dashboard']);
         console.log(data);

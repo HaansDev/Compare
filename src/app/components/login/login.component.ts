@@ -65,7 +65,8 @@ export class LoginComponent implements OnInit {
     user.password =  this.f.password.value;
     this.userService.login(user).subscribe(
       (data: any) => {
-        localStorage.setItem("token_user", data.access_token)
+        console.log(data)
+        localStorage.setItem("token", data.access_token)
         this.router.navigate(['/']);
         console.log(data);
       },
