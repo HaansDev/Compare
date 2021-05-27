@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.component';
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
 import { LaptopsComponent } from './components/laptops/laptops.component';
+import { GuideChooseLaptopComponent } from './components/guide-choose-laptop/guide-choose-laptop.component';
+
 
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
@@ -19,7 +21,7 @@ const routes: Routes = [
     { path: "", component: HomeComponent, pathMatch: "full" },
     { path: "laptops", redirectTo: "laptops/1", pathMatch:"full" },
     { path: "laptops/:page", component: LaptopsComponent },
-    { path: "laptop/:id", component: DetailLaptopComponent },
+    { path: "laptop/:id", component: DetailLaptopComponent },  
     { path: "compare/:id1/:id2/:id3/:id4", component: CompareLaptopsComponent },
     { path: "compare/:id1/:id2/:id3", component: CompareLaptopsComponent },
     { path: "compare/:id1/:id2", component: CompareLaptopsComponent },
