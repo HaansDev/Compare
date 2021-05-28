@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
     transparent: boolean = false
     sticky: boolean = false
     dark: boolean = true
-
+    hideMenu: boolean = true
     constructor(private activateRoute: ActivatedRoute, private router: Router) { }
 
     ngOnInit() {
@@ -41,7 +41,9 @@ export class NavbarComponent implements OnInit {
 
       }
 
-
+      goHome() {
+          this.router.navigate(["/"])
+      }
       toLogin(){
 
         this.router.navigate(["/login"])
