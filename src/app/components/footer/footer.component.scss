@@ -27,6 +27,7 @@ footer {
                 a {
                     color: $cWhite;
                     transition: 0.1s all;
+
                 }
                 .facebook:hover {
                     color: #4267B2;
@@ -69,10 +70,11 @@ footer {
                     color: $cWhite;
                     opacity: 0.80;
                     transition: 0.1s all;
+                    &:hover {
+                        color: #C13584;
+                    }
                 }
-                a:hover {
-                    color: green;
-                }
+
             }
         }
     }
