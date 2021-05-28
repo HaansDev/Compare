@@ -23,17 +23,17 @@ export class CartLaptopsComponent implements OnInit {
                 this.listLaptops = laptops
                 // console.log(this.listLaptops)
         })
-        // this.router.events.subscribe( route => {
-        //
-        //   if(route instanceof NavigationEnd) {
-        //     if(route.url == "/compare") {
-        //       this.hidden = true
-        //     } else {
-        //         this.hidden = false
-        //     }
-        //   }
-        //
-        // })
+        this.router.events.subscribe( route => {
+
+          if(route instanceof NavigationEnd) {
+            if(route.url == "/about-us" || route.url == "/privacy-policy" || route.url == "/legal-notice") {
+              this.hidden = true
+            } else {
+                this.hidden = false
+            }
+          }
+
+        })
     }
 
 

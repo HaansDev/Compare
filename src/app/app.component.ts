@@ -29,9 +29,7 @@ export class AppComponent {
           if(route.url.includes(rutas[i])){
             this.isLogin = true
           }
-
         }
-
       }
     })
 
@@ -55,16 +53,6 @@ export class AppComponent {
   ngAfterContentInit() {
     this.router.events.subscribe (route=>{
       if(route instanceof NavigationEnd){
-
-//         Rutas sin navbar ni footer
-        // let rutas = ["/login", "/register", "/dashboardlogin", "/dashboard", "/dashboard/control", "/dashboard/edition", "/dashboard/admin", "/dashboard/contact", "/compare"]
-
-        // for (let i = 0; i < rutas.length; i++) {
-        //   if(!route.url.includes(rutas[i])){
-        //     this.isLogin = false
-        //   }
-
-        // }
 
 
         if(route.url == "/" || route.url == "/laptops" || route.url == "/laptop"){

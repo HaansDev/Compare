@@ -1,4 +1,36 @@
 .container {
     height: auto;
     padding-top: 100px;
+    padding-bottom: 50px;
+    .title-choose-laptop { margin-bottom: 30px; }
+    .subtitle-choose-laptop {
+        padding-top: 20px;
+        margin-bottom: 30px;
+    }
+    .title-hard {
+        padding-top: 10px;
+        margin-bottom: 25px;
+    }
+    .title-table {
+        text-align: center;
+        padding-top: 15px;
+        margin-bottom: 25px;
+    }
+    .text-choose-laptop { margin-bottom: 30px; }
+    table {
+        width: 60%;
+        margin: auto;
+        caption {
+            padding-bottom: 30px;
+            a {
+                text-decoration: none;
+                font-size: 13px;
+                font-style: italic;
+                color: #6C50E7;
+                &:hover{
+                    color: #B200F1;
+                }
+            }
+        }
+    }
 }

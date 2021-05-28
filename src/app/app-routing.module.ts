@@ -13,7 +13,9 @@ import { DetailLaptopComponent } from './components/detail-laptop/detail-laptop.
 import { CompareLaptopsComponent } from './components/compare-laptops/compare-laptops.component';
 import { LaptopsComponent } from './components/laptops/laptops.component';
 import { GuideChooseLaptopComponent } from './components/guide-choose-laptop/guide-choose-laptop.component';
-
+import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
@@ -26,6 +28,9 @@ const routes: Routes = [
     { path: "compare/:id1/:id2/:id3", component: CompareLaptopsComponent },
     { path: "compare/:id1/:id2", component: CompareLaptopsComponent },
     { path: "guide-choose-laptop", component: GuideChooseLaptopComponent },
+    { path: "legal-notice", component: LegalNoticeComponent },
+    { path: "privacy-policy", component: PrivacyPolicyComponent },
+    { path: "about-us", component: AboutUsComponent },
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
     { path: "dashboardlogin", component: LoginDashboardComponent },
@@ -42,7 +47,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes,{
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+  })
+  ],
+  exports: [RouterModule],
+
 })
 export class AppRoutingModule { }

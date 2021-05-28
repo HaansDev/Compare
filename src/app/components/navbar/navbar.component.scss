@@ -1,9 +1,22 @@
 @import '../../../styles';
 .transparent {
   background: transparent;
+  a:hover {
+      color: $cBlackTheme !important;
+  }
 }
 .dark {
   background: $cBlackTheme;
+  a:hover {
+      color: #C13584 !important;
+  }
+}
+.sticky {
+    background: $cBlackTheme;
+    z-index: 999;
+    a:hover {
+        color: #C13584 !important;
+    }
 }
 .navbar {
     /*  */
@@ -41,11 +54,6 @@
         }
     }
 }
-.sticky {
-    background: $cBlackTheme;
-    z-index: 999;
-}
-
 .btn-sign-dark{
   background: white;
   color: black;

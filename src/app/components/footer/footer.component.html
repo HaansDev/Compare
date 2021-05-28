@@ -20,8 +20,9 @@
         </div>
         <div class="terms">
             <ul class="nav-terms">
-                <li class="link"><a href="#">Política de privacidad</a></li>
-                <li class="link"><a href="#">Términos de servicio</a></li>
+                <li class="link"><a routerLink="/about-us" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sobre nosotros</a></li>
+                <li class="link"><a routerLink="/privacy-policy" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Política de privacidad</a></li>
+                <li class="link"><a routerLink="/legal-notice" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Aviso legal</a></li>
             </ul>
         </div>
     </div>

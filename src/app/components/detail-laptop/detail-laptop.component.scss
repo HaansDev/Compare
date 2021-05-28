@@ -11,29 +11,18 @@
             width: 30%;
             float: left;
         }
-        .laptop-entry {
-            width: 65%;
+        .col-md-auto {
             float: right;
             .title-laptop {
                 font-family: 'DM Sans', sans-serif;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 48px;
-                line-height: 122%;
                 color: $cWhite;
-                text-align: left;
             }
             .box-price-amazon {
-                width: 170px;
-                float: left;
-                margin-top: 30px;
-                margin-left: 25px;
                 .price-amazon {
-                    width: 170px;
-                    height: 34px;
-                    background: rgba(255, 255, 255, 0);
-                    padding: 5px;
 
+                    background: rgba(255, 255, 255, 0);
                     .price {
                         float: left;
                         font-style: italic;
@@ -52,9 +41,6 @@
                 }
             }
             .valoration {
-                width: 18%;
-                float: right;
-                margin-top: 40px;
                 color: rgb(255, 255, 255);
             }
         }
@@ -147,4 +133,115 @@
 
   }
 
+}
+@media (min-width: 1200px) {
+    .container-fluid {
+        .row {
+            .col {
+
+            }
+            .col-md-auto {
+                width: 65%;
+                .title-laptop {
+                    text-align: left;
+                    font-size: 48px;
+                    line-height: 122%;
+                }
+                .contain-valoration-price {
+                    justify-content: space-between;
+                    width: 95%;
+                    height: 100px;
+                    margin: auto;
+                    margin-top: 50px;
+                    .box-price-amazon {
+                        width: 27%;
+                        float: left;
+                        .price-amazon {
+                            width: 170px;
+                            height: 34px;
+                            background: rgba(255, 255, 255, 0);
+                            padding: 5px;
+                            .price {
+                                float: left;
+                                font-style: italic;
+                                font-size: 22px;
+                                font-weight: 700;
+                                line-height: 122%;
+                            }
+                            .logo-amazon {
+                                position: relative;
+                                float: left;
+                                width: 45%;
+                                padding: 2px;
+
+                            }
+                        }
+                    }
+                    .valoration {
+                        width: 70%;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .container-fluid {
+        .row {
+            .col {
+                height: auto;
+                .card-img-top {
+                    width: 40%;
+                }
+            }
+            .col-md-auto {
+                // width: 65%;
+                .title-laptop {
+                    text-align: left;
+                    font-size: 32px;
+                    line-height: 122%;
+                    margin-top: 40px;
+                    margin-bottom: 40px;
+
+                }
+                .contain-valoration-price {
+                    justify-content: space-around;
+                    width: 100%;
+                    height: 100px;
+                    display: flex;
+                    margin: auto;
+                    margin-top: 50px;
+                    .box-price-amazon {
+                        width: 25%;
+                        height: 70px;
+                        float: left;
+                        .price-amazon {
+                            width: 100%;
+                            height: 50px;
+                            background: rgba(255, 255, 255, 0);
+                            padding: 5px;
+                            .price {
+                                float: left;
+                                font-style: italic;
+                                font-size: 22px;
+                                font-weight: 700;
+                                line-height: 122%;
+                            }
+                            .logo-amazon {
+                                position: relative;
+                                float: right;
+                                width: 45%;
+
+                            }
+                        }
+                    }
+                    .valoration {
+                        width: 40%;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
 }
